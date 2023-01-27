@@ -51,26 +51,22 @@ The course starts at a very basic level and builds up gradually. No previous exp
 | Time        | Topic                                           |
 |:------------|:------------------------------------------------|
 | *Day1*      |                                                 |
-| 11.00-14.00 | Introduction to R and RStudio (A)               |
-| *Day2*      |                                                 |
-| 09.00-13.00 | How is R organized? (B)                         |
-|             | Data manipulation (C), lecture                  |
-|             | *Break*                                         |     
-| 14.00-17.00 | Data manipulation (C), practical                |
-|             | Analyzing data (D), lecture                     |
-| *Day3*      |                                                 |
-| 09.00-13.00 | Analyzing data(D), practical                    |
-|             | Data visualization (E), lecture                 |
-|             | *Break*                                         |             
-| 14.00-17.00 | Data visualization (E), practical               |
-|             | Loop and functions (F), lecture                 |
-| *Day4*      |                                                 |
-| 09.00-13.00 | Loops and functions (F), practical              |
-|             | R Markdown, lecture                             |
+| XX.XX-XX.XX | Introduction to R and RStudio (A)               |
 |             | *Break*                                         |
-| 14.00-17.00 | R Markdown, practical                           |
-| *Friday*    |                                                 |
-| 09.00-11.30 | Outstanding issues, Q and A                     |
+| XX.XX-XX.XX | How is R organized? (B)                         |                 
+| *Day2*      |                                                 |
+| XX.XX-XX.XX | Data manipulation (C)                           |
+|             | *Break*                                         |     
+| XX.XX-XX.XX | Analyzing data (D)                              |
+|             |                                                 |
+| *Day3*      |                                                 |
+| XX.XX-XX.XX | Data visualization (E)                          |
+|             | *Break*                                         |             
+| XX.XX-XX.XX | Loops and functions (F)                         |
+| *Day4*      |                                                 |
+| XX.XX-XX.XX|  R Markdown, lecture (G)                         |
+|             | *Break*                                         |
+| XX.XX-XX.XX | Outstanding issues, Q and A                     |
 
 
 # How to prepare
@@ -137,10 +133,16 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
     - [Practical A](Contents/Material/Part A - Introduction/Practical_A_walkthrough.html){target="_blank"}
     - [`notebook.R`](Contents/Material/Part A - Introduction/notebook.R){target="_blank"}
     - [`markdown.Rmd`](Contents/Material/Part A - Introduction/markdown.Rmd){target="_blank"}
+- Part B: How is `R` organized?
+    <!-- - [Lecture B](Contents/Material/Part B - How is R organized/Lecture_B.html){target="_blank"} -->
+    - [Lecture B](Contents/Material/Part B - How is R organized/Lecture-B_november.html){target="_blank"}
+    - [Practical B](Contents/Material/Part B - How is R organized/Practical_B.html){target="_blank"}
+    - [Practical B with solutions](Contents/Material/Part B - How is R organized/Practical_B_walkthrough.html){target="_blank"}
+    - [`boys.RData`](Contents/Material/Part B - How is R organized/boys.RData)
+
 
 All lectures are in `html` format. Practicals are are provided both as naked questions but also with ample explanations and solutions - choose according to your taste!
 
-<!-- All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions.  -->
 
 ## Column 2
 
@@ -152,17 +154,6 @@ The above links are useful references that connect to today's materials.
 
 ### About `rmarkdown`
 
-
-<!-- ```{r, echo=FALSE} -->
-<!-- knitr::opts_chunk$set(echo = TRUE) -->
-<!-- library(vembedr) -->
-
-<!-- knitr::include_url("https://player.vimeo.com/video/178485416?color=428bca&title=0&byline=0&portrait=0", height="360px") -->
-<!-- ``` -->
-
-
-<!-- <iframe src="https://player.vimeo.com/video/178485416?color=428bca&title=0&byline=0&portrait=0" data-external= "1" -->
-<!-- height = "315" width="500" frameborder="0"> </iframe> -->
 
 <iframe src="https://player.vimeo.com/video/178485416?color=428bca&title=0&byline=0&portrait=0" data-external= "1"
 height = "300" width="450" frameborder="0"> </iframe>
@@ -177,13 +168,6 @@ See also [this `rmarkdown` cheat sheet](Contents/Material/Part A - Introduction/
 ### Day2's materials
 We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online.
 
-- Part B: How is `R` organized?
-    <!-- - [Lecture B](Contents/Material/Part B - How is R organized/Lecture_B.html){target="_blank"} -->
-    - [Lecture B](Contents/Material/Part B - How is R organized/Lecture-B_november.html){target="_blank"}
-    - [Practical B](Contents/Material/Part B - How is R organized/Practical_B.html){target="_blank"}
-    - [Practical B with solutions](Contents/Material/Part B - How is R organized/Practical_B_walkthrough.html){target="_blank"}
-    - [`boys.RData`](Contents/Material/Part B - How is R organized/boys.RData)
-
 - Part C: Data manipulation
     - [Lecture C](Contents/Material/Part C - Data manipulation/Lecture_C.html)
     - [Practical C](Contents/Material/Part C - Data manipulation/Practical_C_webex.html)
@@ -192,7 +176,6 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
     - [Practical D](Contents/Material/Part D - Analyzing data/Practical_D_november.html)
     - [Practical D with solutions](Contents/Material/Part D - Analyzing data/Practical_D_walkthrough_november.html)
 
-    
     
 All lectures are in `html` format. Practicals are are provided both as naked questions but also with ample explanations and solutions - choose according to your taste!
 
@@ -214,10 +197,6 @@ The above links are useful references that connect to today's materials.
 ### Day3's materials
 We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online.
 
-- Part D: Analyzing data (continued) 
-    - [Lecture D](Contents/Material/Part D - Analyzing data/Lecture_D.html)
-    - [Practical D](Contents/Material/Part D - Analyzing data/Practical_D_november.html)
-    - [Practical D with solutions](Contents/Material/Part D - Analyzing data/Practical_D_walkthrough_november.html)
 - Part E: Data visualization
     - [Lecture E](Contents/Material/Part E - Data visualization/Lecture_E.html){target="_blank"}
     - [Practical E with base R](Contents/Material/Part E - Data visualization/Practical_E_webex.html){target="_blank"}
@@ -235,24 +214,14 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
     - [New Practical F with solutions](Contents/Material/Part F - Loops and functions/Practical_F_walkthrough_new.html){target="_blank"}
     
 
-<!-- - Part F: Loops and functions -->
-<!--     - [Lecture E](Contents/Material/Part E - Functions apply and looping/Lecture_E.html){target="_blank"} -->
-<!--     - [Lecture E Handout](Contents/Material/Part E - Functions apply and looping/Lecture_E_handout.html){target="_blank"} -->
-<!--     - [Practical E](Contents/Material/Part E - Functions apply and looping/Practical_E_barebone.html){target="_blank"} -->
-<!--     - [Practical E with solutions](Contents/Material/Part E - Functions apply and looping/Practical_E_walkthrough.html){target="_blank"} -->
-
-
 All lectures are in `html` format. Practicals are are provided both as naked questions but also with ample explanations and solutions - choose according to your taste!
 
-
-<!-- All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions. -->
 
 ## Column 2
 
 ### Useful references
 
-<!-- - [`magrittr`](https://magrittr.tidyverse.org) -->
-<!-- - [`R` for Data Science](http://r4ds.had.co.nz) - [Chapter 18 on pipes](http://r4ds.had.co.nz/pipes.html) -->
+
 - [The `ggplot2` reference page](https://ggplot2.tidyverse.org/reference/)
 
 The above link details pretty much all you can do with package `ggplot2`.
@@ -282,8 +251,7 @@ All lectures are in `html` format. Practicals are are provided both as naked que
 
 ### Useful references
 
-<!-- - [`magrittr`](https://magrittr.tidyverse.org) -->
-<!-- - [`R` for Data Science](http://r4ds.had.co.nz) - [Chapter 18 on pipes](http://r4ds.had.co.nz/pipes.html) -->
+
 - [Create awesome HTML tables with `knitr::kable` and `kableExtra`](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)
 
 - [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)
@@ -295,31 +263,23 @@ All lectures are in `html` format. Practicals are are provided both as naked que
 
 ### Miscellaneous
 
-In the example we
+<!-- In the example we -->
 
-- Read and write data in different formats
-- Learn about file paths
-- Learn to find and set working directory
-- Make a two-way table
-- Make a scatter plot in ggplot
-- Draw a sample
-- Make a scatter plot with regression line
+<!-- - Read and write data in different formats -->
+<!-- - Learn about file paths -->
+<!-- - Learn to find and set working directory -->
+<!-- - Make a two-way table -->
+<!-- - Make a scatter plot in ggplot -->
+<!-- - Draw a sample -->
+<!-- - Make a scatter plot with regression line -->
 
-Example code and data:
+<!-- Example code and data: -->
 
-- [`Example_GSS.R`](Contents/Material/GSS/Example_GSS.R){target="_blank"}  R file!
-- [`00_GHA_BASICINFO.dta`](Contents/Material/GSS/00_GHA_BASICINFO.dta){target="_blank"}  GSS Stata file
-- [`01_GHA_EXPFOOD.dta`](Contents/Material/GSS/01_GHA_EXPFOOD.dta){target="_blank"} GSS Stata file
-- [`glss7.csv`](Contents/Material/GSS/glss7.csv){target="_blank"} GSS csv file
-- [`glss7.xlsx`](Contents/Material/GSS/glss7.xlsx){target="_blank"} GSS Excel file
-
-
-<!-- - Part A: Introduction -->
-<!--     - [Lecture A](Contents/Material/Part A - Introduction/Lecture_A.html){target="_blank"} -->
-<!--     - [Practical A](Contents/Material/Part A - Introduction/Practical_A_walkthrough.html){target="_blank"} -->
-<!--     - [`notebook.R`](Contents/Material/Part A - Introduction/notebook.R){target="_blank"} -->
-<!--     - [`markdown.Rmd`](Contents/Material/Part A - Introduction/markdown.Rmd){target="_blank"} -->
-
+<!-- - [`Example_GSS.R`](Contents/Material/GSS/Example_GSS.R){target="_blank"}  R file! -->
+<!-- - [`00_GHA_BASICINFO.dta`](Contents/Material/GSS/00_GHA_BASICINFO.dta){target="_blank"}  GSS Stata file -->
+<!-- - [`01_GHA_EXPFOOD.dta`](Contents/Material/GSS/01_GHA_EXPFOOD.dta){target="_blank"} GSS Stata file -->
+<!-- - [`glss7.csv`](Contents/Material/GSS/glss7.csv){target="_blank"} GSS csv file -->
+<!-- - [`glss7.xlsx`](Contents/Material/GSS/glss7.xlsx){target="_blank"} GSS Excel file -->
 
 
 
