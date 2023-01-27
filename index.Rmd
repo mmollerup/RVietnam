@@ -18,7 +18,7 @@ output:
 
 # Intro {.sidebar}
 
-This dashboard covers the materials for the course introducing R. Course held in Ghana, November 29 - December 2, 2022.
+This dashboard covers the materials for the course introducing R. Course held in Vietnam, May XX - May XX, 2023.
 
 ---
 
@@ -30,7 +30,7 @@ Instructors:
 
 ---
 
-Material adopted from [Gerko Vink](https://github.com/gerkovink/R) and Statistics Denmark.
+Material adopted from Statistics Denmark and [Gerko Vink](https://github.com/gerkovink/R) and Statistics Denmark.
 
 
 ---
@@ -50,21 +50,21 @@ The course starts at a very basic level and builds up gradually. No previous exp
 
 | Time        | Topic                                           |
 |:------------|:------------------------------------------------|
-| *Monday*    |                                                 |
+| *Day1*      |                                                 |
 | 11.00-14.00 | Introduction to R and RStudio (A)               |
-| *Tuesday*   |                                                 |
+| *Day2*      |                                                 |
 | 09.00-13.00 | How is R organized? (B)                         |
 |             | Data manipulation (C), lecture                  |
 |             | *Break*                                         |     
 | 14.00-17.00 | Data manipulation (C), practical                |
 |             | Analyzing data (D), lecture                     |
-| *Wednesday* |                                                 |
+| *Day3*      |                                                 |
 | 09.00-13.00 | Analyzing data(D), practical                    |
 |             | Data visualization (E), lecture                 |
 |             | *Break*                                         |             
 | 14.00-17.00 | Data visualization (E), practical               |
 |             | Loop and functions (F), lecture                 |
-| *Thursday*  |                                                 |
+| *Day4*      |                                                 |
 | 09.00-13.00 | Loops and functions (F), practical              |
 |             | R Markdown, lecture                             |
 |             | *Break*                                         |
@@ -82,7 +82,7 @@ Dear all,
 
 The below steps guide you through installing both `R` as well as the necessary additions.
 
-We look forward to see you all in Accra,  
+We look forward to see you all in Ho Chi Minh City,  
 
 *Signe and Mikkel*
 
@@ -125,11 +125,11 @@ compilation? (Yes/no/cancel)
 
 type `Yes` in the console and press the return key. 
 
-# Monday
+# Day1
 
 ## Column 1
 
-### Mondays's materials
+### Day1's materials
 We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online.
 
 - Part A: Introduction
@@ -170,11 +170,11 @@ height = "300" width="450" frameborder="0"> </iframe>
 <br>
 See also [this `rmarkdown` cheat sheet](Contents/Material/Part A - Introduction/rmarkdown_cheat_sheet.pdf).
 
-# Tuesday
+# Day2
 
 ## Column 1
 
-### Tuesday's materials
+### Day2's materials
 We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online.
 
 - Part B: How is `R` organized?
@@ -207,11 +207,11 @@ All lectures are in `html` format. Practicals are are provided both as naked que
 
 The above links are useful references that connect to today's materials.
 
-# Wednesday
+# Day3
 
 ## Column 1
 
-### Wednesdays's materials
+### Day3's materials
 We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online.
 
 - Part D: Analyzing data (continued) 
@@ -262,11 +262,11 @@ The above link details pretty much all you can do with package `ggplot2`.
 The `sf` setup for `R` is relatively new, and a lot of material about spatial data in `R` uses the older `sp` setup. This book is an introduction to spatial data the `sf` way.
 
 
-# Thursday
+# Day4
 
 ## Column 1
 
-### Thursday's materials
+### Day4's materials
 We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online.
 
 - Part G: R Markdown
@@ -289,11 +289,11 @@ All lectures are in `html` format. Practicals are are provided both as naked que
 - [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)
 
 
-# GSS
+# Misc
 
 ## column 1
 
-### Example with data from GSS
+### Miscellaneous
 
 In the example we
 

@@ -1,4 +1,3 @@
 # RVietnam
-R Vietnam material
 
-Dashboars, slides and exercises for R course
+Dashboard, slides and exercises for R course in Vietnam
