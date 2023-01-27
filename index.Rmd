@@ -167,7 +167,6 @@ See also [this `rmarkdown` cheat sheet](Contents/Part_A/rmarkdown_cheat_sheet.pd
 ### Day2's materials
 We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online.
 
-
 - Part C: Data manipulation
     - [Lecture C](Contents/Part_C/Lecture_C.html)
     - [Practical C](Contents/Part_C/Practical_C_webex.html)
