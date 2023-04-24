@@ -138,7 +138,7 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
     - [Practical B with solutions](Contents/Part_B/Practical_B_walkthrough.html){target="_blank"}
     - [`boys.RData`](Contents/Part_B/boys.RData)
 
-All lectures are in `html` format. Practicals are are provided both as naked questions but also with ample explanations and solutions - choose according to your taste!
+All lectures are in `html` format. Practicals are provided both as naked questions but also with ample explanations and solutions - choose according to your taste!
 
 <!-- All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions.  -->
 
@@ -174,7 +174,7 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
     - [Practical D](Contents/Part_D/Practical_D_november.html)
     - [Practical D with solutions](Contents/Part_D/Practical_D_walkthrough_november.html)
 
-All lectures are in `html` format. Practicals are are provided both as naked questions but also with ample explanations and solutions - choose according to your taste!
+All lectures are in `html` format. Practicals are provided both as naked questions but also with ample explanations and solutions - choose according to your taste!
 
 ## Column 2
 
@@ -207,7 +207,7 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
     - [New Practical F](Contents/Part_F/Practical_F_new.html){target="_blank"}
     - [New Practical F with solutions](Contents/Part_F/Practical_F_walkthrough_new.html){target="_blank"}
     
-All lectures are in `html` format. Practicals are are provided both as naked questions but also with ample explanations and solutions - choose according to your taste!
+All lectures are in `html` format. Practicals are provided both as naked questions but also with ample explanations and solutions - choose according to your taste!
 
 <!-- All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions. -->
 
@@ -239,7 +239,7 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
     - [Ideas for practical](Contents/Part_G/Some_graphs.html){target="_blank"}
     - [`Some_graphs.Rmd`](Contents/Part_G/Some_graphs.Rmd) Corresponding Rmd file for the Ideas.
     
-All lectures are in `html` format. Practicals are are provided both as naked questions but also with ample explanations and solutions - choose according to your taste!
+All lectures are in `html` format. Practicals are provided both as naked questions but also with ample explanations and solutions - choose according to your taste!
 
 
 ## Column 2
