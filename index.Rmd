@@ -18,7 +18,7 @@ output:
 
 # Intro {.sidebar}
 
-This dashboard covers the materials for the course introducing R. Course held in Vietnam, May XX - May XX, 2023.
+This dashboard covers the materials for the course introducing R. Course held in Vietnam, May 8 - May 12, 2023.
 
 ---
 
@@ -50,23 +50,22 @@ The course starts at a very basic level and builds up gradually. No previous exp
 
 | Time        | Topic                                           |
 |:------------|:------------------------------------------------|
-| *Day1*      |                                                 |
-| XX.XX-XX.XX | Introduction to R and RStudio (A)               |
+| *Day 1*     |                                                 |
+| 09.00-11.30 | Introduction to R and RStudio (A)               |
 |             | *Break*                                         |
-| XX.XX-XX.XX | How is R organized? (B)                         |                 
-| *Day2*      |                                                 |
-| XX.XX-XX.XX | Data manipulation (C)                           |
+| 13.30-16.30 | How is R organized? (B)                         |                 
+| *Day 2*     |                                                 |
+| 08.30-11.30 | Data manipulation (C)                           |
 |             | *Break*                                         |     
-| XX.XX-XX.XX | Analyzing data (D)                              |
-|             |                                                 |
-| *Day3*      |                                                 |
-| XX.XX-XX.XX | Data visualization (E)                          |
+| 13.30-16.30 | Analyzing data (D)                              |
+| *Day 3*     |                                                 |
+| 08.30-11.30 | Data visualization (E)                          |
 |             | *Break*                                         |             
-| XX.XX-XX.XX | Loops and functions (F)                         |
-| *Day4*      |                                                 |
-| XX.XX-XX.XX|  R Markdown, lecture (G)                         |
+| 13.30-16.30 | Loops and functions (F)                         |
+| *Day 4*     |                                                 |
+| 08.30-11.30 |  R Markdown, lecture (G)                        |
 |             | *Break*                                         |
-| XX.XX-XX.XX | Outstanding issues, Q and A                     |
+| 13.30-16.30 | Outstanding issues, Q and A                     |
 
 
 # How to prepare
@@ -121,11 +120,11 @@ compilation? (Yes/no/cancel)
 
 type `Yes` in the console and press the return key. 
 
-# Day1
+# Monday
 
 ## Column 1
 
-### Day1's materials
+### Day 1's materials
 We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online.
 
 - Part A: Introduction
@@ -160,11 +159,11 @@ height = "300" width="450" frameborder="0"> </iframe>
 <br>
 See also [this `rmarkdown` cheat sheet](Contents/Part_A/rmarkdown_cheat_sheet.pdf).
 
-# Day2
+# Tuesday
 
 ## Column 1
 
-### Day2's materials
+### Day 2's materials
 We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online.
 
 - Part C: Data manipulation
@@ -188,11 +187,11 @@ All lectures are in `html` format. Practicals are are provided both as naked que
 
 The above links are useful references that connect to today's materials.
 
-# Day3
+# Wednesday
 
 ## Column 1
 
-### Day3's materials
+### Day 3's materials
 We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online.
 
 - Part E: Data visualization
@@ -227,11 +226,11 @@ The above link details pretty much all you can do with package `ggplot2`.
 The `sf` setup for `R` is relatively new, and a lot of material about spatial data in `R` uses the older `sp` setup. This book is an introduction to spatial data the `sf` way.
 
 
-# Day4
+# Thursday
 
 ## Column 1
 
-### Day4's materials
+### Day 4's materials
 We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online.
 
 - Part G: R Markdown
