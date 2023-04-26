@@ -81,7 +81,7 @@ output:
 
 ## Software
 <center>
-<img src="figures/fig1.png" alt="HTML5 Icon" width = 90%>
+<img src="figuresLecture/fig1.png" alt="HTML5 Icon" width = 90%>
 </center>
 
 ## The origin of R
@@ -99,7 +99,7 @@ output:
 
 ## Integrated Development Environment
 <center>
-<img src="figures/fig2.png" alt="HTML5 Icon" width = 85%>
+<img src="figuresLecture/fig2.png" alt="HTML5 Icon" width = 85%>
 </center>
 
 ## RStudio
@@ -156,7 +156,7 @@ a
 
 ## Writing code
 <center>
-<img src="figures/codelight.png" alt="HTML5 Icon" width = 99%>
+<img src="figuresLecture/codelight.png" alt="HTML5 Icon" width = 99%>
 </center>
 
 This is why we use R-Studio.
