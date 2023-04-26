@@ -39,14 +39,30 @@ output:
 
 | Day         | Hours       | Topic                               | 
 |:------------|:------------|:------------------------------------|
-| *Day1*      | xx.xx-xx.xx | Introduction to R and RStudio (A)   |
-|             | xx.xx-xx.xx | How is R organized? (B)             |
-| *Day2*      | xx.xx-xx.xx | Data manipulation (C)               |
-|             | xx.xx-xx.xx | Analyzing data (D)                  |
-| *Day3*      | xx.xx-xx.xx | Data visualization  (E)             |
-|             | xx.xx-xx.xx | Loops and functions (F)             |
-| *Day4*      | xx.xx-xx.xx | R Markdown (G)                      |
-|             | xx.xx-xx.xx | Outstanding issues, Q and A         |
+| *Tuesday*   | 09.00-12.00 | Installation of R and RStudio       |
+|             | 12.30-16.00 | Introduction to R and Rstudio (A+B) |
+| *Wednesday* | 09.00-12.00 | Data manipulation (C)               |
+|             | 13.30-16.30 | Analyzing data (D)                  |
+| *Thursday*  | 09.00-12.00 | Data visualization  (E)             |
+|             | 13.30-16.30 | Loops and functions (F)             |
+| *Friday*    | 09.00-11.30 | Outstanding issues, Q and A         |
+
+
+
+<!-- |  Time       | Topic                                           | -->
+<!-- |:------------|:------------------------------------------------| -->
+<!-- | *Monday*    |                                                 | -->
+<!-- | 10.00-12.00 | Installation of R and RStudio                   | -->
+<!-- | 13.30-16.00 | Introduction to R and Rstudio (A+B)             | -->
+<!-- | *Tuesday*   |                                                 | -->
+<!-- | 09.00-12.00 | Data manipulation (C)                           | -->
+<!-- | 13.30-16.30 | Analyzing data (D)                              | -->
+<!-- | *Wednesday* |                                                 | -->
+<!-- | 09.00-12.00 | Data visualization  (E)                         |                                         | -->
+<!-- | 13.30-16.30 | Loops and functions (F)                         | -->
+<!-- | *Thursday*  |                                                 | -->
+<!-- | 09.00-11.30 | Outstanding issues, Q and A                     | -->
+
 
 
 <!-- <center> -->
