@@ -236,8 +236,8 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
 - Part G: R Markdown
     - [Lecture G](Contents/Part_G/Lecture_G.html){target="_blank"}
     - [Practical G](Contents/Part_G/Practical_G_webex.html){target="_blank"}
-    - [Ideas for practical](Contents/Part_G/Some_graphs.html){target="_blank"}
-    - [`Some_graphs.Rmd`](Contents/Part_G/Some_graphs.Rmd) Corresponding Rmd file for the Ideas.
+    - [Ideas for practical](Contents/Part_G/Some_graphs.html){target="_blank"}   XXXX KAN IKKE KØRE - HAR IKKE DATAFIL XXXX
+    - [`Some_graphs.Rmd`](Contents/Part_G/Some_graphs.Rmd) Corresponding Rmd file for the Ideas.  
     
 All lectures are in `html` format. Practicals are provided both as naked questions but also with ample explanations and solutions - choose according to your taste!
 
