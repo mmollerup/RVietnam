@@ -8,6 +8,7 @@ output:
     smaller: yes
     widescreen: no
     self_contained: true
+    transition: faster
     lib_dir: libs
   beamer_presentation:
     colortheme: beaver

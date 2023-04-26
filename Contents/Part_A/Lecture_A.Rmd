@@ -8,6 +8,7 @@ output:
     fig_width: 8
     logo: logo_en.png
     transition: faster
+    self_contained: true 
     smaller: true
   beamer_presentation: default
 ---
