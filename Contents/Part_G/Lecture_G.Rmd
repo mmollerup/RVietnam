@@ -15,12 +15,17 @@ output:
 
 
 
+
+
+
+
 ```{r, include = F}
 library(tidyverse)
 library(magrittr)
 library(knitr)
 #library(kableExtra)
 library(mice)   
+
 
 inline <- function(x = "") paste0("`` `r ", x, "` ``")   #Verbatim for inline r code
 
@@ -31,6 +36,8 @@ inline <- function(x = "") paste0("`` `r ", x, "` ``")   #Verbatim for inline r 
 #dt <- mtcars[1:5, 1:6]
 # 
 #options("kableExtra.html.bsTable" = T) #For kableExtra with ioslides
+#library(kableExtra)
+
 
 ```
 
@@ -217,7 +224,7 @@ ggplot(data = mice::boys, aes(age, bmi)) +
 gives $\rightarrow$
 
 
-## Example, continued
+## Example, continiued
 
 ```{r OnlyFig, echo=FALSE, warning=FALSE}
 #Shows only figure - no warnings
@@ -260,19 +267,22 @@ boys %>%
 
 ## Tables - `knitr::kable` and `KableExtra`
 
-<!-- ```{r, results='asis'} -->
-<!-- boys %>% -->
-<!--   select(-gen, -phb, -tv, -hc) %>% -->
-<!--   arrange(age) %>% -->
-<!--   slice_head(n=5) %>% -->
-<!--   knitr::kable(col.names = c("Age","Height","Weight","BMI", "Region"), -->
-<!--                align = "ccccc", -->
-<!--                caption = "<font size=3>The 5 youngest boys</font>") %>% -->
-<!--   kable_styling(bootstrap_options = c("hover"), -->
-<!--                 full_width = FALSE, position = "left") -->
-<!-- ``` -->
+```{r, eval=FALSE}
+boys %>%
+  select(-gen, -phb, -tv, -hc) %>%
+  arrange(age) %>%
+  slice_head(n=5) %>%
+  knitr::kable(col.names = c("Age","Height","Weight","BMI", "Region"),
+               align = "ccccc",
+               caption = "<font size=3>The 5 youngest boys</font>") %>%
+  kable_styling(bootstrap_options = c("hover"),
+                full_width = FALSE, position = "left")
 
-Der er ged i kableExtra
+```
+
+<img src="kableExtraFig.png" alt="HTML5 Icon" width = 25%>
+
+
 
 
 
@@ -280,9 +290,14 @@ Der er ged i kableExtra
 
 "Shiny is an R package that makes it easy to build interactive web apps straight from R. You can host standalone apps on a webpage or embed them in R Markdown documents or build dashboards. You can also extend your Shiny apps with CSS themes, htmlwidgets, and JavaScript actions."
 
+Examples
 
-From https://shiny.rstudio.com/
+* https://solutions.posit.co/connections/db/best-practices/dashboards/#example
+* https://edgarruiz.shinyapps.io/db-dashboard/
 
+More 
+
+* https://shiny.rstudio.com/
 
 # Practical
 

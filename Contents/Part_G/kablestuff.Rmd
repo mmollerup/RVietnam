@@ -1,0 +1,86 @@
+---
+title: "Tables"
+output: html_document
+date: "May 2023"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Simple table
+
+
+` Right | Left | Default | Center | `  
+`|------:|:------|-------|:-----:|`  
+`| 12 | 12 | 12 | 12 |`  
+`| 123 | 123 | 123 | 123 | `  
+`| 1 | 1 | 1 | 1 |`
+
+
+
+Right | Left | Default | Center |
+|------:|:------|-------|:-----:|
+| 12 | 12 | 12 | 12 |
+| 123 | 123 | 123 | 123 |
+| 1 | 1 | 1 | 1 |
+
+
+# Table - knitr::kable
+
+
+```{r kablelib, include=FALSE}
+library(tidyverse)
+library(kableExtra)
+library(mice)   
+
+library("magick")
+library("webshot")
+webshot::install_phantomjs(force = TRUE)
+```
+
+
+```{r kabletable}
+
+boys %>%
+  select(-gen, -phb, -tv, -hc) %>%
+  arrange(age) %>%
+  slice_head(n=5) %>%
+  knitr::kable(format = "html",
+               col.names = c("Age","Height","Weight","BMI", "Region"),
+               align = "ccccc",
+               caption = "The 5 youngest boys")
+```
+
+# Table - knitr::kable and KableExtra
+
+
+```{r kableextratable}
+boys %>% 
+  select(-gen, -phb, -tv, -hc) %>% 
+  arrange(age) %>% 
+  slice_head(n=5) %>% 
+  knitr::kable(col.names = c("Age","Height","Weight","BMI", "Region"), 
+               align = "ccccc", 
+               caption = "<font size=3>The 5 youngest boys</font>") %>% 
+  kable_styling(bootstrap_options = c("hover"), 
+                full_width = FALSE, position = "left") 
+```
+
+
+```{r save_kabletable, echo=FALSE}
+boys %>% 
+  select(-gen, -phb, -tv, -hc) %>% 
+  arrange(age) %>% 
+  slice_head(n=5) %>% 
+  knitr::kable(col.names = c("Age","Height","Weight","BMI", "Region"), 
+               align = "ccccc", 
+               caption = "<font size=3>The 5 youngest boys</font>") %>% 
+  kable_styling(bootstrap_options = c("hover"), 
+                full_width = FALSE, position = "left") %>%
+  save_kable("kableExtraFig.png", zoom = 4)
+```
+
+
+
