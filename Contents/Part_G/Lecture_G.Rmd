@@ -277,14 +277,12 @@ boys %>%
                caption = "<font size=3>The 5 youngest boys</font>") %>%
   kable_styling(bootstrap_options = c("hover"),
                 full_width = FALSE, position = "left")
-
 ```
 
 <img src="kableExtraFig.png" alt="HTML5 Icon" width = 25%>
 
-
-
-
+<!-- Note kableExtra pakken virker ikke i kombi med R 4.3.0 og ioslides (kableExtra kan ikke læses. ) FOr tidligere  -->
+<!-- version (4.2.2) kan kableExtra indlæses men producerer tabel uden horisontale skillelinjer. Derfor produceres tabellerne i seperat rmd-dokument (traditionel html-ikke ioslides). Der gemes det som png med kable_save(). -->
 
 ## Shiny
 
@@ -293,7 +291,8 @@ boys %>%
 Examples
 
 * https://solutions.posit.co/connections/db/best-practices/dashboards/#example
-* https://edgarruiz.shinyapps.io/db-dashboard/
+* https://shiny.rstudio.com/gallery/brazil-voter-profile.html
+
 
 More 
 
