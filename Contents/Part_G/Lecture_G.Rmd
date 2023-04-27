@@ -22,14 +22,15 @@ library(knitr)
 #library(kableExtra)
 library(mice)   
 
-# inline <- function(x = "") paste0("`` `r ", x, "` ``")
+inline <- function(x = "") paste0("`` `r ", x, "` ``")   #Verbatim for inline r code
+
 # 
 #knitr::opts_chunk$set(message = F, echo = F)
 # 
 
-dt <- mtcars[1:5, 1:6]
+#dt <- mtcars[1:5, 1:6]
 # 
-# options("kableExtra.html.bsTable" = T) #For kableExtra with ioslides
+#options("kableExtra.html.bsTable" = T) #For kableExtra with ioslides
 
 ```
 
@@ -128,12 +129,14 @@ Examples
 * \~\~Strikethrough\~\~ gives ~~Strikethrough~~
 * superscript\^2\^subscript\~2\~ gives superscript^2^/subscript~2~
 * \$e\^{i\\pi}+1=0\$ gives $e^{i\pi}+1=0$
-* `r #inline('nrow(mice::boys)')` gives `r nrow(mice::boys)`
-*
-Headers:
+* `r inline('nrow(mice::boys)')` gives `r nrow(mice::boys)`
+
+Headers
 
 * \# Level 1 header
 * \#\# Level 2 header
+* \#\#\# ....
+
 
 ## Simple table
 
@@ -214,7 +217,7 @@ ggplot(data = mice::boys, aes(age, bmi)) +
 gives $\rightarrow$
 
 
-## Example
+## Example, continued
 
 ```{r OnlyFig, echo=FALSE, warning=FALSE}
 #Shows only figure - no warnings
