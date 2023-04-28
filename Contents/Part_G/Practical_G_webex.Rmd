@@ -14,20 +14,39 @@ library(webexercises)
 
 ---
 
-#### Exercise 0
-
-
-Do the following:  
-1. *File > New File > R Markdown*  
-2. Type in a **Title**  
-3. press **knit**
-
----
-
 #### Exercise 1
 
 
-Produce your own presentation or report with R Markdown. Your work must contain text and at least one table and one figure. 
+Create a new R Markdown document (default example) in HTML format. 
+
+`r hide("Hint")`
+Take a look in file menu
+`r unhide()`
+
+`r hide("Solution")`
+File $\rightarrow$ New File $\rightarrow$ R Markdown   
+`r unhide()`
+
+Knit the document.
+
+`r hide("Solution")`
+Push the Knit button or Ctrl+Shift+K   
+`r unhide()`
+
+`r hide("Extra")`
+It is also possible to use the command line with
+```{r eval=FALSE}
+rmarkdown::render(file,"html_document")
+```
+`r unhide()`
+
+
+---
+
+#### Exercise 2
+
+
+Produce your own HTML report with R Markdown. Your work must contain text and at least one table and one figure. 
 
 
 ---
