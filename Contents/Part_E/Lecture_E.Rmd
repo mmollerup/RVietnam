@@ -29,6 +29,8 @@ library(sf)       # Spatial features
 
 New functions: 
 
+XXXXX 
+
 - `plot()`: R's plotting device 
 - `barplot()`: bar plot function 
 - `pie()`: pie plot function 
@@ -36,7 +38,7 @@ New functions:
 - `density()`: function that calculates the density 
 - `boxplot()`: box plot function 
 <!-- - `ggplot()`: ggplot's plotting device -->
-
+XXXXX
 
 ## Why visualise?
 
@@ -160,7 +162,6 @@ pie(x=counts, main="Pie chart")
 ```
 
 ## Pie chart
-
 Let's go one step back: 
 ```{r, fig.align='center', dev.args=list(bg="transparent")}
 counts <- table(boys$reg)
@@ -184,6 +185,17 @@ hist(boys$hgt, main = "Histogram", xlab = "Height")
 boxplot(boys$hgt ~ boys$reg, main = "Box plot", 
         xlab = "Region", ylab = "Height")
 ```
+
+## Base plotting functions 
+
+- `plot()`: Generic function for plotting of R objects 
+- `barplot()`: bar plots  
+- `pie()`: pie charts 
+- `hist()`: histograms
+- `boxplot()`: box plots function 
+- `par()`: Set or query graphical parameters 
+- `density()`: function that calculates the density  
+
 
 ## The alternative to base plots
 
