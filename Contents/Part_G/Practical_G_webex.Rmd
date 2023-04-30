@@ -36,7 +36,7 @@ Push the Knit button or Ctrl+Shift+K
 `r hide("Extra")`
 It is also possible to use the command line with
 ```{r eval=FALSE}
-rmarkdown::render(file,"html_document")
+rmarkdown::render(file, "html_document")
 ```
 `r unhide()`
 
