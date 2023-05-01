@@ -15,10 +15,6 @@ output:
 
 
 
-
-
-
-
 ```{r, include = F}
 library(tidyverse)
 library(magrittr)
