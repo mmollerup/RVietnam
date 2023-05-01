@@ -17,13 +17,12 @@ output:
 
 ## We use the following packages
 ```{r, message=FALSE, warning=FALSE}
-library(tidyverse)
-#library(MASS)     # Datasets
-library(mice)     # Boys dataset
-#library(dplyr)    # Data manipulation
-#library(magrittr) # Pipes
-#library(ggplot2)  # Plotting suite
-library(sf)       # Spatial features
+library(mice)       # Boys dataset
+library(tidyverse)  #
+#library(dplyr)     # Data manipulation
+#library(magrittr)  # Pipes
+#library(ggplot2)   # Plotting suite
+library(sf)         # Spatial features
 ```
 
 ## 
@@ -319,27 +318,27 @@ plot(gg)
 
 ## Geoms
 
-- geom_point
-- geom_bar
-- geom_line
-- geom_smooth
+- `geom_point()`: scatter plot
+- `geom_bar()`: bar charts
+- `geom_line()`: line graph
+- `geom_smooth()`: trend line
+- `geom_histogram()`: histograms
+- `geom_boxplot()`: box plot
+- `geom_density()`: density plots
 
-- geom_histogram
-- geom_boxplot
-- geom_density
+
+<!-- ## Geoms: Bar -->
+<!-- ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', dev.args=list(bg="transparent")} -->
+<!-- data.frame(x = letters[1:5], y = c(1, 3, 3, 2, 1)) %>% -->
+<!--   ggplot(aes(x = x, y = y)) + -->
+<!--   geom_bar(fill = "dark green", stat = "identity") + -->
+<!--   labs(title = "Value per letter", -->
+<!--        x     = "Letter", -->
+<!--        y     = "Value") + -->
+<!--   theme_minimal() -->
+<!-- ``` -->
 
 ## Geoms: Bar
-```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', dev.args=list(bg="transparent")}
-data.frame(x = letters[1:5], y = c(1, 3, 3, 2, 1)) %>% 
-  ggplot(aes(x = x, y = y)) + 
-  geom_bar(fill = "dark green", stat = "identity") +
-  labs(title = "Value per letter",
-       x     = "Letter", 
-       y     = "Value") +
-  theme_minimal()
-```
-
-## XXXX Geoms: Bar
 
 ```{r, warning=FALSE, message=FALSE, out.width = "75%", fig.align='center', dev.args=list(bg="transparent")}
 boys %>% filter(!is.na(reg)) %>%
