@@ -175,10 +175,10 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
 - Part C: Data manipulation
     - [Lecture C](Contents/Part_C/Lecture_C.html)
     - [Practical C](Contents/Part_C/Practical_C_webex.html)
-- Part D: Analyzing data 
+- Part D: Analyzing data
     - [Lecture D](Contents/Part_D/Lecture_D.html)
-    - [Practical D](Contents/Part_D/Practical_D_november.html)
-    - [Practical D with solutions](Contents/Part_D/Practical_D_walkthrough_november.html)
+    - [Practical D](Contents/Part_D/Practical_D.html)
+    - [Practical D with solutions](Contents/Part_D/Practical_D_walkthrough.html)
 
 All lectures are in `html` format. Practicals are provided both as naked questions but also with ample explanations and solutions - choose according to your taste!
 
