@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Loopd and functions</title>
+  <title>Loops and functions</title>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -19,12 +19,12 @@
     var SLIDE_CONFIG = {
       // Slide settings
       settings: {
-                title: 'Loopd and functions',
+                title: 'Loops and functions',
                         useBuilds: true,
         usePrettify: true,
         enableSlideAreas: true,
         enableTouch: true,
-                        favIcon: 'logo.png',
+                        favIcon: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAA+CAYAAADgZd+jAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTk2OTBCRjU4NTk4MTFFMkIzNDhCNzEyRjBGOTgzRDQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTk2OTBCRjY4NTk4MTFFMkIzNDhCNzEyRjBGOTgzRDQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxOTY5MEJGMzg1OTgxMUUyQjM0OEI3MTJGMEY5ODNENCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxOTY5MEJGNDg1OTgxMUUyQjM0OEI3MTJGMEY5ODNENCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PnBDhikAAA2WSURBVHja7F0LlFVV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',
               },
 
       // Author information
@@ -3199,7 +3199,7 @@ slide:not(.current) .plotly.html-widget{
       position: absolute;
       bottom: 20px;
       left: 60px;
-      background: url(logo.png) no-repeat 0 50%;
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAA+CAYAAADgZd+jAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTk2OTBCRjU4NTk4MTFFMkIzNDhCNzEyRjBGOTgzRDQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTk2OTBCRjY4NTk4MTFFMkIzNDhCNzEyRjBGOTgzRDQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxOTY5MEJGMzg1OTgxMUUyQjM0OEI3MTJGMEY5ODNENCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxOTY5MEJGNDg1OTgxMUUyQjM0OEI3MTJGMEY5ODNENCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PnBDhikAAA2WSURBVHja7F0LlFVV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) no-repeat 0 50%;
       -webkit-background-size: 30px 30px;
       -moz-background-size: 30px 30px;
       -o-background-size: 30px 30px;
@@ -3891,47 +3891,48 @@ my.list</pre>
 <pre class = 'prettyprint lang-r'>rand.mat &lt;- matrix(rnorm(21), nrow = 3, ncol = 7)
 rand.mat</pre>
 
-<pre >##            [,1]       [,2]        [,3]        [,4]      [,5]       [,6]
-## [1,]  1.4038187 -1.6081301 -0.07996811 -0.01705376 -2.576056  0.5677888
-## [2,]  0.4000623  0.3576988  0.48573094  1.24920089 -1.121338  1.4958728
-## [3,] -0.5841929  1.5432416  1.66236431 -1.90793736  1.828197 -0.4143383
-##           [,7]
-## [1,]  1.133231
-## [2,]  1.460779
-## [3,] -1.002657</pre>
+<pre >##            [,1]       [,2]       [,3]       [,4]        [,5]      [,6]
+## [1,] -0.4467659 -0.2516344  1.4107261  0.5881200 -1.62289009 -1.822734
+## [2,]  0.4504569 -0.8953834  0.4065222 -0.2712457 -1.20875010  0.327296
+## [3,] -1.1975994  0.2541730 -0.4445424  0.9042306  0.07694298 -1.018705
+##            [,7]
+## [1,] -0.2421397
+## [2,] -1.8307343
+## [3,] -0.7586399</pre>
 
 <pre class = 'prettyprint lang-r'>apply(rand.mat, MARGIN = 1, FUN = max)</pre>
 
-<pre >## [1] 1.403819 1.495873 1.828197</pre>
+<pre >## [1] 1.4107261 0.4504569 0.9042306</pre>
 
 </article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section" class="smaller ">
 
 <pre class = 'prettyprint lang-r'>apply(rand.mat, MARGIN = 2, FUN = max)</pre>
 
-<pre >## [1] 1.403819 1.543242 1.662364 1.249201 1.828197 1.495873 1.460779</pre>
+<pre >## [1]  0.45045692  0.25417302  1.41072607  0.90423064  0.07694298  0.32729605
+## [7] -0.24213972</pre>
 
 </article></slide><slide class=""><hgroup><h2><code>apply()</code></h2></hgroup><article  id="apply-5" class="smaller ">
 
 <pre class = 'prettyprint lang-r'>rand.mat</pre>
 
-<pre >##            [,1]       [,2]        [,3]        [,4]      [,5]       [,6]
-## [1,]  1.4038187 -1.6081301 -0.07996811 -0.01705376 -2.576056  0.5677888
-## [2,]  0.4000623  0.3576988  0.48573094  1.24920089 -1.121338  1.4958728
-## [3,] -0.5841929  1.5432416  1.66236431 -1.90793736  1.828197 -0.4143383
-##           [,7]
-## [1,]  1.133231
-## [2,]  1.460779
-## [3,] -1.002657</pre>
+<pre >##            [,1]       [,2]       [,3]       [,4]        [,5]      [,6]
+## [1,] -0.4467659 -0.2516344  1.4107261  0.5881200 -1.62289009 -1.822734
+## [2,]  0.4504569 -0.8953834  0.4065222 -0.2712457 -1.20875010  0.327296
+## [3,] -1.1975994  0.2541730 -0.4445424  0.9042306  0.07694298 -1.018705
+##            [,7]
+## [1,] -0.2421397
+## [2,] -1.8307343
+## [3,] -0.7586399</pre>
 
 <pre class = 'prettyprint lang-r'>apply(rand.mat, MARGIN = 1, FUN = sum)</pre>
 
-<pre >## [1] -1.176369  4.328007  1.124677</pre>
+<pre >## [1] -2.387318 -3.021838 -2.184140</pre>
 
 </article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-1" class="smaller ">
 
 <pre class = 'prettyprint lang-r'>apply(rand.mat, MARGIN = 2, FUN = var)</pre>
 
-<pre >## [1] 0.9880792 2.5335231 0.7900340 2.5243939 5.0355675 0.9124700 1.7896378</pre>
+<pre >## [1] 0.6808083 0.3319556 0.8624596 0.3700300 0.7856585 1.1801354 0.6566319</pre>
 
 </article></slide><slide class=""><hgroup><h2><code>sapply()</code></h2></hgroup><article  id="sapply" class="smaller ">
 
@@ -4056,21 +4057,21 @@ squared(-2)</pre>
 
 <pre class = 'prettyprint lang-r'>rand.mat</pre>
 
-<pre >##            [,1]       [,2]        [,3]        [,4]      [,5]       [,6]
-## [1,]  1.4038187 -1.6081301 -0.07996811 -0.01705376 -2.576056  0.5677888
-## [2,]  0.4000623  0.3576988  0.48573094  1.24920089 -1.121338  1.4958728
-## [3,] -0.5841929  1.5432416  1.66236431 -1.90793736  1.828197 -0.4143383
-##           [,7]
-## [1,]  1.133231
-## [2,]  1.460779
-## [3,] -1.002657</pre>
+<pre >##            [,1]       [,2]       [,3]       [,4]        [,5]      [,6]
+## [1,] -0.4467659 -0.2516344  1.4107261  0.5881200 -1.62289009 -1.822734
+## [2,]  0.4504569 -0.8953834  0.4065222 -0.2712457 -1.20875010  0.327296
+## [3,] -1.1975994  0.2541730 -0.4445424  0.9042306  0.07694298 -1.018705
+##            [,7]
+## [1,] -0.2421397
+## [2,] -1.8307343
+## [3,] -0.7586399</pre>
 
 <pre class = 'prettyprint lang-r'>apply(rand.mat, 2, squared)</pre>
 
-<pre >##           [,1]      [,2]        [,3]         [,4]     [,5]      [,6]     [,7]
-## [1,] 1.9707069 2.5860823 0.006394898 0.0002908307 6.636063 0.3223841 1.284213
-## [2,] 0.1600498 0.1279484 0.235934545 1.5605028674 1.257399 2.2376354 2.133877
-## [3,] 0.3412813 2.3815947 2.763455090 3.6402249769 3.342305 0.1716762 1.005321</pre>
+<pre >##           [,1]       [,2]      [,3]       [,4]        [,5]      [,6]       [,7]
+## [1,] 0.1995998 0.06331986 1.9901481 0.34588508 2.633772228 3.3223605 0.05863164
+## [2,] 0.2029114 0.80171142 0.1652603 0.07357421 1.461076797 0.1071227 3.35158811
+## [3,] 1.4342444 0.06460393 0.1976180 0.81763304 0.005920222 1.0377598 0.57553450</pre>
 
 </article></slide><slide class=""><hgroup><h2>Our own function</h2></hgroup><article  id="our-own-function-3" class="smaller ">
 
@@ -4149,15 +4150,18 @@ for (i in 1:rand.vec){
   print(i)
 }</pre>
 
-<pre >## Warning in 1:rand.vec: numerical expression has 10 elements: only the first used</pre>
+<pre >## Warning in 1:rand.vec: numerical expression has 10 elements: only the first
+## used</pre>
 
 <pre >## [1] 11
-## [1] 10</pre>
+## [1] 10
+## [1] 9
+## [1] 8</pre>
 
 <pre class = 'prettyprint lang-r'>rand.vec</pre>
 
-<pre >##  [1] -0.3233283 -0.9312299 -1.9290923 -1.1094446  0.5424674 -0.4749966
-##  [7]  0.4634141 -0.9056592  1.6255552  0.2473541</pre>
+<pre >##  [1] -2.0304600 -0.5167284 -0.3279691  0.6758718  0.1472977 -2.0711343
+##  [7] -0.4508057 -0.6272010  0.6964109  0.5146284</pre>
 
 </article></slide><slide class=""><hgroup><h2>Troubleshooting</h2></hgroup><article  id="troubleshooting-2" class="smaller ">
 
@@ -4168,9 +4172,10 @@ for (i in 1:rand.vec){
 
 <pre class = 'prettyprint lang-r'>1:rand.vec</pre>
 
-<pre >## Warning in 1:rand.vec: numerical expression has 10 elements: only the first used</pre>
+<pre >## Warning in 1:rand.vec: numerical expression has 10 elements: only the first
+## used</pre>
 
-<pre >## [1] 1 0</pre>
+<pre >## [1]  1  0 -1 -2</pre>
 
 <pre class = 'prettyprint lang-r'>1:length(rand.vec)</pre>
 
@@ -4199,8 +4204,8 @@ for (i in 1:length(rand.vec)){
 
 <pre class = 'prettyprint lang-r'>rand.vec</pre>
 
-<pre >##  [1] -0.3233283 -0.9312299 -1.9290923 -1.1094446  0.5424674 -0.4749966
-##  [7]  0.4634141 -0.9056592  1.6255552  0.2473541</pre>
+<pre >##  [1] -2.0304600 -0.5167284 -0.3279691  0.6758718  0.1472977 -2.0711343
+##  [7] -0.4508057 -0.6272010  0.6964109  0.5146284</pre>
 
 <p>Still, no luck.</p>
 
@@ -4214,8 +4219,8 @@ for (i in 1:length(rand.vec)){
 
 rand.vec</pre>
 
-<pre >##  [1]  9.676672  9.068770  8.070908  8.890555 10.542467  9.525003 10.463414
-##  [8]  9.094341 11.625555 10.247354</pre>
+<pre >##  [1]  7.969540  9.483272  9.672031 10.675872 10.147298  7.928866  9.549194
+##  [8]  9.372799 10.696411 10.514628</pre>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Practical</h2></hgroup><article  id="practical" class="smaller "></article></slide>
 

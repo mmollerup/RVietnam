@@ -203,9 +203,6 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
     - [Lecture F](Contents/Part_F/Lecture_F.html){target="_blank"}
     - [Practical F](Contents/Part_F/Practical_F.html){target="_blank"}
     - [Practical F with solutions](Contents/Part_F/Practical_F_walkthrough.html){target="_blank"}
-    - [New Lecture F](Contents/Part_F/Lecture_F_new.html){target="_blank"}
-    - [New Practical F](Contents/Part_F/Practical_F_new.html){target="_blank"}
-    - [New Practical F with solutions](Contents/Part_F/Practical_F_walkthrough_new.html){target="_blank"}
     
 All lectures are in `html` format. Practicals are provided both as naked questions but also with ample explanations and solutions - choose according to your taste!
 
