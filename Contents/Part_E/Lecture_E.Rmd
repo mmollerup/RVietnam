@@ -17,11 +17,12 @@ output:
 
 ## We use the following packages
 ```{r, message=FALSE, warning=FALSE}
-library(MASS)     # Datasets
+library(tidyverse)
+#library(MASS)     # Datasets
 library(mice)     # Boys dataset
-library(dplyr)    # Data manipulation
-library(magrittr) # Pipes
-library(ggplot2)  # Plotting suite
+#library(dplyr)    # Data manipulation
+#library(magrittr) # Pipes
+#library(ggplot2)  # Plotting suite
 library(sf)       # Spatial features
 ```
 
@@ -151,17 +152,10 @@ Beyond basic scatter/line plots, there are specific functions:
 counts <- table(boys$reg)
 
 barplot(counts, main="Bar chart", ylab = "N")
-
 ```
 
-## Pie chart
-```{r, fig.align='center', dev.args=list(bg="transparent")}
-counts <- table(boys$reg)
+## Bar chart
 
-pie(x=counts, main="Pie chart")
-```
-
-## Pie chart
 Let's go one step back: 
 ```{r, fig.align='center', dev.args=list(bg="transparent")}
 counts <- table(boys$reg)
@@ -169,22 +163,39 @@ counts <- table(boys$reg)
 counts
 ```
 
+
+## Pie chart
+
+```{r, echo=FALSE, warning=FALSE}
+counts <- table(boys$reg)
+
+pie(x=counts, main="Pie chart")
+```
+
+<!-- ```{r, fig.align='center', dev.args=list(bg="transparent")} -->
+<!-- counts <- table(boys$reg) -->
+
+<!-- pie(x=counts, main="Pie chart") -->
+<!-- ``` -->
+
 ## Histogram
-```{r, fig.align='center', dev.args=list(bg="transparent")}
+
+```{r, echo=FALSE, warning=FALSE}
 hist(boys$hgt, main = "Histogram", xlab = "Height")
 ```
 
-<!-- ## Density -->
 <!-- ```{r, fig.align='center', dev.args=list(bg="transparent")} -->
-<!-- dens <- density(boys$hgt, na.rm = TRUE) -->
-<!-- plot(dens, main = "Density plot", xlab = "Height", bty = "L") -->
+<!-- hist(boys$hgt, main = "Histogram", xlab = "Height") -->
 <!-- ``` -->
 
+
 ## Box plot
-```{r, fig.align='center', dev.args=list(bg="transparent")}
+
+```{r, echo=FALSE, warning=FALSE, dev.args=list(bg="transparent")}
 boxplot(boys$hgt ~ boys$reg, main = "Box plot", 
         xlab = "Region", ylab = "Height")
 ```
+
 
 ## Base plotting functions 
 
@@ -327,6 +338,26 @@ data.frame(x = letters[1:5], y = c(1, 3, 3, 2, 1)) %>%
        y     = "Value") +
   theme_minimal()
 ```
+
+## XXXX Geoms: Bar
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', dev.args=list(bg="transparent")}
+# data.frame(x = letters[1:5], y = c(1, 3, 3, 2, 1)) %>% 
+#   ggplot(aes(x = x, y = y)) + 
+#   geom_bar(fill = "dark green", stat = "identity") +
+#   labs(title = "Value per letter",
+#        x     = "Letter", 
+#        y     = "Value") +
+#   theme_minimal()
+
+boys %>% drop_na(reg) %>%
+ggplot(aes(x=reg)) +
+  geom_bar(fill = "dark green") + 
+  labs(x = "Region",
+       y = "N")
+```
+
+
 
 ## Geoms: Line
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', dev.args=list(bg="transparent")}

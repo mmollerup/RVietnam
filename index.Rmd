@@ -30,7 +30,7 @@ Instructors:
 
 ---
 
-Material adopted from Statistics Denmark and [Gerko Vink](https://github.com/gerkovink/R) and Statistics Denmark.
+Material adopted from Statistics Denmark and [Gerko Vink](https://github.com/gerkovink/R).
 
 
 ---
@@ -97,19 +97,25 @@ Rstudio is an Integrated Development Environment (IDE). It can be obtained as st
 Execute the following lines of code in the console window:
 
 ```{r eval=FALSE, echo = TRUE}
-install.packages(c("ggplot2", "stats","tidyverse", "magrittr", "micemd", "jomo", "pan", 
-                 "lme4", "knitr", "rmarkdown", "plotly", "ggplot2", "shiny", 
-                 "devtools", "boot", "class", "car", "MASS", "ggplot2movies", 
-                 "ISLR", "DAAG", "mice", "mitml", "miceadds", "sf"), 
+install.packages(c("tidyverse", "knitr", "mice", "rmarkdown", "sf"),
                  dependencies = TRUE)
 ```
+
+<!-- ```{r eval=FALSE, echo = TRUE} -->
+<!-- install.packages(c("ggplot2", "stats","tidyverse", "magrittr", "micemd", "jomo", "pan",  -->
+<!--                  "lme4", "knitr", "rmarkdown", "plotly", "ggplot2", "shiny",  -->
+<!--                  "devtools", "boot", "class", "car", "MASS", "ggplot2movies",  -->
+<!--                  "ISLR", "DAAG", "mice", "mitml", "miceadds", "sf"),  -->
+<!--                  dependencies = TRUE) -->
+<!-- ``` -->
 
 
 If you are not sure where to execute code, use the following figure to identify the console:
 
-<center>
+
+<left>
   <img src="console.png" alt="HTML5 Icon" width = 50%>
-</center>
+</left>
 
 Just copy and paste the installation command and press the return key. When asked 
 
