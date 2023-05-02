@@ -29,16 +29,18 @@ library(sf)         # Spatial features
 
 New functions: 
 
-XXXXX 
-
 - `plot()`: R's plotting device 
 - `barplot()`: bar plot function 
 - `pie()`: pie plot function 
 - `hist()`: histogram 
-- `density()`: function that calculates the density 
 - `boxplot()`: box plot function 
-<!-- - `ggplot()`: ggplot's plotting device -->
-XXXXX
+- `ggplot()`: `ggplot2`´s plot function 
+- `aes`: aesthetics
+- `geom_XX()`: geoms for creating plots
+- `labs()`: labels 
+
+<!-- - `ggpot()`: ggplot's plotting device -->
+
 
 ## Why visualise?
 
@@ -346,7 +348,6 @@ ggplot(aes(x=reg)) +
   geom_bar(fill = "dark green") + 
   labs(x = "Region", y = "N")
 ```
-
 
 
 ## Geoms: Line
