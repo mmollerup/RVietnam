@@ -1,15 +1,9 @@
 ---
-title: "Practical E - Exercises with base R"
+title: "Practical E - Exercises"
 author: "Statistical Programming in R"
 date: ""
 output: webexercises::webexercises_default
 ---
-
-<!-- output:  -->
-<!--   html_document: -->
-<!--     self_contained: true -->
-<!--     lib_dir: libs -->
-
 
 
 ```{r setup, include=FALSE}
@@ -18,24 +12,26 @@ library(tidyverse)
 library(webexercises)
 
 ```
+
 ---
 
 The following packages are required for this practical:
 
 ```{r, message=FALSE}
+library(mice)
 library(dplyr)
 library(magrittr)
-library(mice)
-library(ggplot2)
 library(stringr)
+library(ggplot2)
 ```
 
-and if you'd like the same results as I have obtained, you can fix the random seed
+<!-- and if you'd like the same results as I have obtained, you can fix the random seed -->
 
-```{r cache=TRUE}
-set.seed(123)
-```
+<!-- ```{r cache=TRUE} -->
+<!-- set.seed(123) -->
+<!-- ``` -->
 ---
+
 
 #### Exercise 0 
 
@@ -53,11 +49,12 @@ There are many more functions that can plot specific types of plots. For example
 `r unhide()`
 ---
 
-#### Exercise 1 
 
-Create a scatterplot between `age` and `bmi` in the `mice::boys` data set.
+#### Exercise 1A
 
-`r hide()`
+Create a scatter plot between `age` and `bmi` in the `mice::boys` data set. Use the base R plotting device.
+
+`r hide("Solution")`
 
 With the standard plotting device in `R`:
 
@@ -68,62 +65,41 @@ plot( boys$bmi ~ boys$age )
 
 ---
 
-#### Exercise 2
+#### Exercise 1B
 
-Now recreate the plot with the following specifications:
+Create a scatter plot between `age` and `bmi` in the `mice::boys` data set. Use `ggplot`.
 
-- If `bmi < 18.5` use `color = "light blue"`
-- If `bmi > 18.5 & bmi < 25` use `color = "light green"`
-- If `bmi > 25 & bmi < 30` use `color = "orange"`
-- If `bmi > 30` use `color = "red"`
-
-Hint: it may help to expand the data set with a new variable. 
-
-It may be easier to create a new variable that creates the specified categories. We can use the `cut()` function to do this quickly
-
+`r hide("Hint")`
+The point geom (`geom_points()`) is used to create scatterplots.
+`r unhide()`
 
 `r hide("Solution")`
 ```{r cache=TRUE}
-boys2 <- 
-  boys %>%
-  mutate(class = cut(bmi, c(0, 18.5, 25, 30, Inf),
-                    labels = c("underweight",
-                               "healthy",
-                               "overweight",
-                               "obese")))
+p <- ggplot( data = boys, aes(age, bmi))
+p + geom_point()
 ```
 
-by specifying the boundaries of the intervals. In this case we obtain 4 intervals: `0-18.5`, `18.5-25`, `25-30` and `30-Inf`. We used the `%>%` pipe to work with `bmi` directly. Alternatively, we could have done this without a pipe:
+Package `ggplot2` offers far greater flexibility in data visualization than the standard plotting devices in `R`. However, it has its own language, which allows you to easily expand graphs with additional commands. To make these expansions or layers clearly visible, it is advisable to use the plotting language conventions. For example,
 
-```{r cache=TRUE}
-boys3 <- boys
-boys3$class <- cut(boys$bmi, c(0, 18.5, 25, 30, Inf), 
-                   labels = c("underweight",
-                              "healthy",
-                              "overweight",
-                              "obese"))
+```{r, eval = FALSE}
+  ggplot( data = mice::boys, aes(age, bmi)) +
+  geom_point()
 ```
 
-to obtain the same result. 
+would yield the same plot as 
 
-With the standard plotting device in `R` we can now specify:
-
-```{r cache=TRUE}
-plot(bmi ~ age, subset = class == "underweight", col = "light blue", data = boys2, 
-     ylim = c(10, 35), xlim = c(0, 25))
-points(bmi ~ age, subset = class == "healthy", col = "light green", data = boys2)
-points(bmi ~ age, subset = class == "overweight", col = "orange", data = boys2)
-points(bmi ~ age, subset = class == "obese", col = "red", data = boys2)
+```{r, eval = FALSE}
+ggplot(mice::boys, aes(age, bmi)) + geom_point()
 ```
-`r unhide()`
+but the latter style may be less informative, especially if more customization takes place and if you share your code with others. 
+`r unhide()` 
 ---
 
-#### Exercise 3
+#### Exercise 2A
 
-Create a histogram for `age` in the `boys` data set.
+Create a histogram for `age` in the `boys` data set. Use the base R plotting device.
 
 `r hide("Solution")`
-
 
 With the standard plotting device in `R`:
 
@@ -146,9 +122,28 @@ hist(boys$age, breaks = 50, xlab = "Age", main = "Histogram")
 `r unhide()`
 ---
 
-#### Exercise 4
+#### Exercise 2B 
 
-Create a bar chart for `reg` in the boys data set.
+Create a histogram for `age` in the `boys` data set. Use `ggplot`.
+
+`r hide("Hint")`
+The geom `geom_histogram()` is used to create histograms.
+`r unhide()`
+
+`r hide("Solution")`
+```{r cache=TRUE}
+ggplot( data = boys ) + 
+  geom_histogram(aes(age), binwidth = .4)
+```
+
+Please note that the plots from `geom_histogram()` and `hist` use different calculations for the bars (bins) and hence may look slightly different.
+`r unhide()`
+---
+
+
+#### Exercise 2.1A
+
+Create a bar chart for `reg` in the boys data set. Use the base R plotting device.
 
 `r hide("Solution")`
 
@@ -162,9 +157,27 @@ boys %$%
 `r unhide()`
 ---
 
-#### Exercise 5
+#### Exercise 2.1B 
 
-Create a box plot for `hgt` with different boxes for `reg` in the `boys` data set.
+Create a bar chart for `reg` in the boys data set. Use `ggplot`.
+
+`r hide("Hint")`
+The geom `geom_bar()` is used to create bar charts.
+`r unhide()`
+
+`r hide("Solution")`
+```{r cache=TRUE}
+ggplot( data = boys ) + 
+  geom_bar(aes(reg))
+```
+
+Note that `geom_bar` by default plots the `NA`'s, while `barplot()` omits the `NA`'s without warning. If we would not like to plot the `NA`s, then a simple `filter()` (see exercise 2) on the `boys` data is efficient. 
+`r unhide()`
+---
+
+#### Exercise 2.2A
+
+Create a box plot for `hgt` with different boxes for `reg` in the `boys` data set. Use the base R plotting device.
 
 `r hide("Solution")`
 
@@ -178,9 +191,27 @@ boys %$%
 `r unhide()`
 ---
 
-#### Exercise 6
 
-Create a density plot for `age` with different curves for boys from the `city` and boys from rural areas (`!city`).
+#### Exercise 2.2B
+
+Create a box plot for `hgt` with different boxes for `reg` in the `boys` data set. Use `ggplot`.
+
+`r hide("Hint")`
+The geom `geom_boxplot()` is used to create box plots.
+`r unhide()`
+
+`r hide("Solution")`
+```{r cache=TRUE}
+ggplot( data = boys, aes(reg, hgt)) +
+  geom_boxplot()
+```
+`r unhide()`
+---
+
+
+#### Exercise 2.3A
+
+Create a density plot for `age` with different curves for boys from the `city` and boys from rural areas (`!city`). Use the base R plotting device.
 
 `r hide("Solution")`
 With a standard plotting device in `R`:
@@ -210,12 +241,116 @@ lines(density(boys$age[!is.na(boys$reg) & boys$reg != "city"]),
 `r unhide()` 
 ---
 
-##### Exercise 7
 
-Create a diverging bar chart for `hgt` in the `boys` data set, that displays for every `age` year that year's mean height in deviations from the overall average `hgt`.
+#### Exercise 2.3B
 
-Let's not make things too complicated and just focus on `ggplot2`:
+Create a density plot for `age` with different curves for boys from the `city` and boys from rural areas (`!city`). Use `ggplot`.
 
+`r hide("Hint 1")`
+Create a new variable that indicates whether the area is urban or rural. Filter out missing values.
+`r unhide()`
+
+`r hide("Hint 2")`
+The geom `geom_density()` is used to create density plots.
+`r unhide()`
+
+`r hide("Solution")` 
+With `ggplot2`:
+
+```{r cache=TRUE}
+boys %>%
+  mutate(area = ifelse(reg == "city", "city", "rural")) %>%
+  filter(!is.na(area)) %>%
+  ggplot(aes(age, fill = area)) +
+  geom_density(alpha = .3) # some transparency
+```
+`r unhide()`
+---
+
+#### Exercise 3
+
+Now recreate the plot from Exercise 1B with the following specifications:
+
+- If `bmi < 18.5` use `color = "light blue"`
+- If `bmi > 18.5 & bmi < 25` use `color = "light green"`
+- If `bmi > 25 & bmi < 30` use `color = "orange"`
+- If `bmi > 30` use `color = "red"`
+
+`r hide("Hint 1")`
+It may help to expand the data set with a new variable. 
+`r unhide()`
+
+`r hide("Hint 2")`
+It may be easier to create a new variable that creates the specified categories. We can use `mutate()` and the `cut()` function to do this quickly
+`r unhide()`
+
+`r hide("Solution")`
+```{r cache=TRUE}
+boys2 <- 
+  boys %>%
+  mutate(class = cut(bmi, c(0, 18.5, 25, 30, Inf),
+                    labels = c("underweight",
+                               "healthy",
+                               "overweight",
+                               "obese")))
+```
+
+by specifying the boundaries of the intervals. In this case we obtain 4 intervals: `0-18.5`, `18.5-25`, `25-30` and `30-Inf`. We can now call `ggplot`
+
+```{r cache=TRUE}
+ggplot(data = boys2) +
+  geom_point(aes(age, bmi, col = class))
+```
+
+Although the different classifications have different colours, the colours are not conform the specifications of this exercise. We can manually override this:
+
+```{r cache=TRUE}
+ggplot(data = boys2 ) +
+  geom_point(aes(age, bmi, col = class)) +
+  scale_color_manual(values = c("light blue", "light green", "orange", "red"))
+```
+
+Because there are missing values, `ggplot2` displays a warning message. If we would like to not consider the missing values when plotting, we can simply exclude the `NA`s by using a `filter()`:
+
+```{r cache=TRUE}
+  ggplot( data = boys2[ !is.na( boys2$class ), ] ) +
+  geom_point(aes(age, bmi, col = class)) +
+  scale_color_manual(values = c("light blue", "light green", "orange", "red"))
+```
+
+Specifying a filter on the feature `class` is sufficient: age has no missings and the missings in `class` directly correspond to missing values on `bmi`. Filtering on `bmi` would therefore yield an identical plot.
+`r unhide()`
+---
+
+
+#### Exercise 4
+
+Create a diverging bar chart for `hgt` in the `boys` data set, that displays for every `age` year that year's mean height in deviations from the overall average `hgt`. Use `ggplot`.
+
+`r hide("Hint 1")`
+First create 2 new variabels. One for the height deviations and one for the (22?) age categories.
+```{r eval=FALSE}
+boys %>%
+  mutate(Hgt = hgt - mean(hgt, na.rm = TRUE),
+         Age = cut(age, 0:22, labels = 0:21)) 
+```
+`r unhide()`
+
+`r hide("Hint 2")`
+Find the mean height deviations in each age group
+```{r eval=FALSE }
+group_by(Age)
+  summarize(Hgt = mean(Hgt, na.rm = TRUE))
+```  
+`r unhide()`
+
+`r hide("Hint 3")`
+Define a new variable that indikates wether the height deviations is below or above average. You can apply `cut()`.
+```{r eval=FALSE }
+mutate(Diff = cut(Hgt, c(-Inf, 0, Inf),
+                  labels = c("Below Average", "Above Average")))
+```  
+`r unhide()`
 
 `r hide("Solution")`
 ```{r}
@@ -244,62 +379,55 @@ boys %>%
 
 The `na.rm` argument ensures that the mean and sd of only the observed values in each category are used.
 `r unhide()`
-
 ---
 
-#### Exercise 8 
+#### Exercise 5 
 
-Read in the `sf` package, and open the shapefiles on the Danish municipalities from the course homepage. Plot the `REGIONNAVN` variable to see the Danish regions. Plot the municipal-level population.
+Read in the `sf` package, and open the shapefiles on the Danish municipalities from the course homepage. Plot the `REGIONNAVN` variable to see the Danish regions. Plot the municipal-level population. Use `ggplot`. 
 
 
 `r hide("Solution")`
-
-With the standard plotting device in `R`:
-
 ```{r}
 library(sf)
 denmark <- st_read("DK_map.shp")
 class(denmark)
 ```
 
-The default plot for an object of class `sf` is a multi-plot of all attributes, up to a reasonable maximum:
 ```{r}
-plot(denmark)
+ggplot( data = denmark ) + geom_sf()
 ```
 
-If we want to view the shapes themselves without the attributes, we can plot the `st_geometry`
+Say we want to colour the maps by the administrative regions coded in the `REGIONNAVN` variable. Also, we could move the legend inside the plot and use a more colorblind-friendly color scale:
+
 ```{r}
-plot(st_geometry(denmark))
+denmark %>% ggplot( aes( fill = REGIONNAVN  ) ) + geom_sf() +
+  theme(legend.position = c(0.8,0.7)) +
+  scale_fill_brewer(palette = "Set2")
 ```
-
-
-Say we want to colour the maps by the administrative regions coded in the `REGIONNAVN` variable:
-```{r}
-denmark <- denmark %>% mutate( REGIONNAVN = word( REGIONNAVN , 2))
-plot(denmark["REGIONNAVN"], key.pos = 1, key.length = 1)
-```
-
-The legend is being bothersome here, though. The `ggplot` default is prettier.
 
 We plot the municipal-level population
 
 ```{r}
-denmark <- denmark %>% mutate( population = population/1000) 
-
-plot(denmark["population"], main = "Population,\nthousands")
+denmark %>% mutate( population = population/1000) %>% 
+  ggplot(aes( fill = population)) +
+  geom_sf() + 
+  scale_fill_viridis_c() + # The viridis color scale gives more visual nuance
+  labs( fill = "Population,\nthousands")
 ```
 
 But perhaps population per square kilometer might be more informative than just population
 ```{r}
 denmark$area <- st_area(denmark)/(1000^2)
 
-denmark1 <- denmark %>% 
+denmark %>% 
   group_by(KOMKODE) %>% 
   summarise( total.area = sum( as.numeric( area ) ), 
              population = first( population )) %>% 
-  mutate( pop.area = population/total.area)
-
-plot(denmark1["pop.area"], main = "Population per square kilometer")
+  mutate( pop.area = population/total.area) %>% 
+  ggplot( aes( fill = pop.area)) + 
+  geom_sf()+ 
+  scale_fill_viridis_c() + # The viridis color scale gives more visual nuance
+  labs( fill = "Population per \nsquare kilometer")
 ```
 
 Our `sf` object contains more than one feature for some of the municipalities. The population number given is for the total municipality, so we need to compute the total area for each municipality. 
@@ -307,6 +435,13 @@ Our `sf` object contains more than one feature for some of the municipalities. T
 ---
 
 End of Practical
+
+---
+
+#### Useful References
+
+[The `ggplot2` reference page](https://ggplot2.tidyverse.org/reference/index.html)
+
 
 ---
 
