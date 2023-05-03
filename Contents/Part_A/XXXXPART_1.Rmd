@@ -1,0 +1,378 @@
+---
+title: "Introduktion"
+author: "Metode og Analyse"
+output_yaml: "../slide_template.yaml"
+---
+
+# Velkommen
+```{r include=FALSE}
+library(tidyverse)
+```
+
+
+## Program for kurset
+
+Introduktionskursus i 5 dele
+
+```{r echo=F, out.width='30%', out.extra='style="float:right; padding:10px"'}
+knitr::include_graphics("figurer/DSTpakker2.png")
+```
+
+- **Introduktion**
+- **Datamanipulation**
+- **Håndtering af tekstvariable og datoer**
+- **Import og eksport af data, R og databaser**
+- **Brug af DST-pakker**
+
+Kurset er en *tidyverse*-introduktion til R (modsat *base R*)
+
+Målet er at introducere datamanipulation og produktion af basalt output, og at introducere DST-specifikke ressourcer til R.
+
+
+## Format 
+
+- En blanding af præsentationer og øvelser
+- Kursusmaterialer til denne gang ligger på `Q:\Alle\R-kursus\Introduktion`
+- To sæt øvelser med hints og løsninger
+   - Brug hints, og spørg endelig
+- Vi arbejder på DSTs R-server
+- Spørg endelig
+
+## Læsestof og ressourcer
+
+### Bøger
+- [R for Data Science](https://r4ds.had.co.nz/): Dette er tidyverse-bibelen, og en god reference til dette kursus
+- [An Introduction to R](https://intro2r.com/): En god introduktion med mere af en *base R*-tilgang 
+- [Advanced R](https://adv-r.hadley.nz/): Dybere forståelse af programmeringssproget R
+
+### Online
+- [CRAN task view for officiel statistik](https://cran.r-project.org/web/views/OfficialStatistics.html) En 
+ liste over pakker, der er relevante for officiel statistik
+- [CRAN](https://cran.r-project.org/): Dokumentation af R-pakker
+ 
+# Hvad er R? 
+
+## Hvad er R? 
+- R er et programmeringssprog til statistisk programmering og grafik
+- Opensource, drevet af *the R Foundation for Statistical Computing*
+- Drevet af et frivilligt miljø, som udvikler pakker til alle tænkelige formål
+
+## Pakker
+- En "pakke" er en samling af funktioner og data lavet af andre R-brugere
+- Der er ca. 8 pakker i *Base R* 
+- Mere end 15.000 pakker på det officielle arkiv [CRAN](https://cran.r-project.org/)
+   - For at blive accepteret på CRAN er der krav mht. dokumentation og stabilitet  
+   - Alle pakker i CRAN ligger på Danmarks Statistiks R-server
+- Der er en pakke til alt
+   - Men *"buyer beware"*
+      - Er denne pakke lavet af folk, der ved, hvad de gør? Bliver den vedligeholdt?
+
+## Pakker
+- Umiddelbart er alle pakker ikke læst ind 
+   - Indholdet af en pakke bliver tilgængeligt, når den læses ind med `library()`-funktionen
+   - At henvise til elementer i pakker, der ikke er læst ind, giver en fejl. 
+- Elementer i en pakke kan refereres til med `PakkeNavn::ElementNavn`, eller bare med `ElementNavn`, når pakken er indlæst 
+- Hvis der er et objekt ved navn `ElementNavn` i både `Pakke1` og `Pakke2`, er det den senest indlæste pakke, der gælder 
+
+## Hvad er tidyverse?
+
+- En samling af pakker til datahåndtering, modellering, og visualisering, som "deler underliggende designfilosofi, grammatik og datastrukturer"
+- Karakteriseret ved brug af såkaldte "pipes", hvor output af hver linjes kode sendes videre til næste led i pipen. Dette giver generelt lettere læselig kode.
+```{r echo=F, out.width='50%', out.extra='style="float:right; padding:10px"'}
+knitr::include_graphics("figurer/tidyverse.png")
+```
+- Indlæs med `library(tidyverse)`
+
+# Rstudio
+
+## Hvad er RStudio?
+- Integreret softwareudviklingsmiljø for R
+- Samler brugbar information og procedurer på ét sted
+- Highlighting af kode 
+- Man kan arbejde i projekter
+- Ekstra funktionalitet (rapporter i html, doc, pfd, webpages...)
+- Integration med versionskontrol (git, subversion)
+
+## Hvad er Rstudio?
+<center>
+<img src="figurer/fig2_annoteret.png" alt="HTML5 Icon" width = 90%>
+</center>
+
+
+## R i DST
+
+https://intra.dst.local/da/Intranet/Teknologi/Vaerktoejer/R
+
+- Server med *Rstudio* og alle pakker fra CRAN
+- R-miljøet kan anvendes til ad-hoc analyser og lignende småopgaver. Anvendelse af R til større opgaver fordrer en godkendelse i IT-Governance Board. <!-- (JPJ: Er dette korrekt lige nu?) -->
+- Support fra IT (R-miljøet) og Metode og Analyse (programmerings-relateret). Se evt. intra siden [her](https://intra.dst.local/da/Intranet/Teknologi/Vaerktoejer/R).  
+      - Vi supporterer interne R-pakker til indlæsning af data fra PSD, ESR og BBR, og til brug af klassifikationer fra Colectica
+
+
+# Workflow
+
+## At skrive kode
+- Kodefiler skrives i editoren og sendes til konsollen med Ctrl + Enter. 
+
+<center>
+<img src="figurer/fig2_annoteret.png" alt="HTML5 Icon" width = 80%>
+</center>
+
+## At skrive kode
+
+<center>
+<img src="figurer/codelight.png" alt="HTML5 Icon" width = 99%>
+</center>
+
+Highlighting er en af de fine ting, Rstudio giver os. 
+
+## Projekter
+- En feature ved Rstudio
+- Basalt set: Et projekt er en mappe, der indeholder en `.Rproj`-fil. Når du åbner projektfilen, starter du en ny session, med dit *working directory* i projektmappen
+   - *working directory*: Hvor `R` kigger efter filer, du vil loade, og lægger filer, du vil gemme. 
+      - Man kan se sit *working directory* med `getwd`, og man kan sætte det med `setwd` - **men man bør lade være**, for det giver mindre skrøbelig kode. 
+- Det er god praksis at holde alle filer, der hører til et projekt, det samme sted
+- Projekter gør det lettere at adskille separate analyser, og gør kode mere transportabel og robust
+
+## Projekter
+- Lav en separat mappe og et RStudio-projektfil til hvert projekt
+- Læg dine kodefiler dér
+- Gem output dér
+- Gem output *med kode* ikke som peg-og-klik
+- Når du koder stier til filer, så gør det *relativt til din projektfolder*
+
+```{r, eval=FALSE}
+## Godt!:
+saveRDS( MitObjekt, "/Output/MitObjekt.RDS")
+
+## Nej!:
+saveRDS( MitObjekt, "C:/Dokumenter/Dette Projekt/Output/MitObjekt.RDS")
+```
+
+*(Bemærk også: R bruger `/` og ikke `\` i stier til filer)*
+
+# Øvelser
+
+# At arbejde i R
+
+## Hjælp
+
+- Alle pakker, der publiceres på CRAN skal have en *help file*.  
+      - Da vi har alle pakker fra CRAN liggende på R-serveren kan den første *help* søgning være meget langsom  
+
+- Hvis du kender navnet på en funktion (f.eks anova()), finder du *help filen* ved at skrive ?anova eller help(anova) i konsollen
+
+- Hvis du ikke kender navnet, kan ?? efterfulgt af en søgeterm hjælpe - ??anova giver dig alle *help pages* der indeholder ordet 'anova'
+
+- Men internettet er hurtigere
+
+- www.stackoverflow.com og www.stackexchange.com er tit til hjælp
+
+## Objekter og elementer
+- R arbejder med objekter, der består af elementer. De mindste elementer er tal og bogstaver. 
+
+- Elementer assignes til objekter
+- Objekter kan bruges til at lave beregninger
+- Beregninger kan præsenteres som funktioner
+- Funktioner udfører beregninger og returnerer nye objekter
+
+- Se de objekter, du har lavet, i Environment-tabben til højre i Rstudio
+
+## Assignment
+
+Koden 
+
+```{r}
+2+2
+```
+
+laver en beregning. Vi kan lægge resultatet i et objekt således:
+
+```{r}
+a <- 2+2
+```
+
+Vi kan så referere til objektet `a` 
+
+```{r}
+a 
+```
+
+# Data
+
+## Vektorer
+Man kan samle elementer af samme type (f.eks. tal eller bogstaver) i en **vektor** 
+```{r}
+a <- c(1,2,3,4,5)
+a
+```
+Karakterer i R kendetegnes ved anførselstegn
+```{r}
+a.new <- c("a", "A", "b", "c")
+a.new
+```
+
+## Vektorer
+Vektorer kan samles
+```{r}
+c( a, a.new)
+c(1:5, 10:14)
+rep(a,3)
+```
+Bemærk, at hvis vi lægger tal og bogstaver sammen, gør R tallene til chars.
+
+## Data frames og tibbles
+
+- Data.frames er R's version af datasæt, tibbles er tidyverse-versionen
+- Rækker og søjler kan navngives
+
+```{r}
+D <- data.frame("V1" = 1:5,
+                "V2" = 10:6, 
+                "V3" = letters[1:5])
+D
+```
+
+Åbn datasættet med 
+```{r, eval=F}
+View(D)
+```
+
+## Data frames og tibbles
+
+Søjlerne i en `data.frame` kan refereres til på forskellige måder
+```{r}
+D$V1
+
+D[["V3"]]
+
+D[,3]
+
+#tidyverse way
+pull(D, V3)
+
+```
+
+Bemærk, at alle tre metoder returnerer en vektor. 
+
+
+## Data frames og tibbles
+
+Tilsvarende kan man referere til rækker således:
+```{r}
+D[1,]
+D[2:3,]
+
+#tidyverse way
+slice(D, n = 2:3)
+
+```
+
+## tibbles
+
+>"**Tibbles** *are data.frames that are lazy and surly: they* **do less** *(i.e. they don’t change variable names or types, and don’t do partial matching) and* **complain more** *(e.g. when a variable does not exist). This forces you to confront problems earlier, typically leading to* **cleaner, more expressive code**."
+
+```{r}
+as_tibble(D)
+```
+
+## Print af tibbles
+
+Print af tibbles viser typen af alle variable, og printer kun de første 10 rækker og de søjler, der er plads til på skærmen. Det er en rar default, som kan underkendes når det er nødvendigt:
+
+```{r}
+## TO DO GODT EKSEMPEL
+nycflights13::flights |> 
+  print(n = 3, width = Inf)
+```
+
+## Typer af data
+- Logical
+- Integer
+- Double 
+- Character
+
+Funktioner som `as.character` og `as.integer` konverterer data
+
+I øvrigt skal nævnes
+
+- Datoer (som er doubles med konfetti på)
+- Faktorer (formatterede værdier)
+
+## Datoer
+
+- Datoer og tid kan have klasserne date og datetime.
+- Pakken lubridate er et rigtig godt værktøj her
+- Datetime kan konverteres til datoer med `as.Date` eller `as_date`
+
+```{r, message=FALSE}
+library(lubridate)
+
+nycflights13::flights |> filter( as_date( time_hour ) == dmy("14FEB2013"))
+```
+
+
+```{r echo=F, out.width='20%', out.extra='style="float:right; padding:10px"'}
+knitr::include_graphics("figurer/lubridate.svg")
+```
+
+## Faktorer 
+- Faktorer er kategoriske variable kodet som heltal og med et format på. 
+- Så de ligner karaktervariable, men opfører sig ikke helt sådan. 
+- Faktoren accepterer kun er begrænset, prædefineret antal af værdier. 
+- "Gamle" R-funktionaliteter vil meget gerne lave strings til faktorer - tidyverse gør det ikke pr. default
+- Faktorer er nyttige til:
+   - Statistisk modellering
+   - Kontrol over rækkefølge af niveauer
+   - At kontrollere, at input holder sig til foruddefinterede værdier
+
+
+## Logiske operatorer
+
+- Logiske operatorer bruges til at subsette data og til betingede statements
+   - **`==`** (lig med)
+   - **`<`** og **`<=`** (mindre end / mindre end eller lig med)
+   - **`>`** og **`>=`** (større end / større end eller lig med )
+   - **%in%** (elementet er i en liste - f.eks `a %in% c(2,3,5,7)`)
+   - **`&`** og **`|`** for *and* eller *or*
+   - **`!`** for negation (f.eks. `a != b` eller `!( a %in% c(2,3,5,7))`)
+   
+```{r}
+nycflights13::flights |> filter( carrier == "UA" & month %in% 10:11 ) |> print(n=3)
+```
+
+## Missing værdier
+
+- Missingness repræsenteres med `NA`. 
+   - `NA_character`, `NA_integer`, `NA_real`, `NA_Date_`, `NA_POSIXct_`
+
+```{r}
+1 == NA
+NA == NA
+is.na( c( 1, 2, NA, 4 ))
+```
+
+## Vær opmærksom på defaulthåndteringer af `NA`
+
+```{r}
+mean( c(1,2,3, NA))
+mean( c(1,2,3, NA), na.rm = TRUE )
+```
+
+Hver enkelt `R`-funktion har en default som enten er "resultatet er missing" eller "udfør beregningen på de observationer, der ikke er missing", og gør oftest ikke opmærksom på det. 
+
+## Defaulthåndteringer af `NA`
+```{r, include=FALSE}
+starwars <- starwars |> select(name, height, mass, hair_color, skin_color, eye_color, sex, gender)
+```
+
+
+`filter` beholder kun rækker, hvor betingelsen er sand, og dropper både `FALSE` og `NA`
+```{r}
+starwars |> print(n=3)
+
+starwars |> filter( hair_color != "blond") |> print(n=3)
+```
+<!-- Skal denn slide måske droppes da det bliver gennemgået i 2.? -->
+
+# Øvelser

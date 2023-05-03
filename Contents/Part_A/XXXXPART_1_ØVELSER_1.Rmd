@@ -1,0 +1,325 @@
+---
+title: "Introduktion til R i Danmarks Statistik"
+author: "Metode og Analyse"
+output: webexercises::webexercises_default
+---
+
+# Introduktion del 1
+
+```{r message=FALSE, warning=FALSE, echo=F}
+
+knitr::opts_chunk$set(message = F, results = T)
+library("webexercises")
+
+```
+
+**Format for øvelserne: ** Vi kører øvelser med hints og løsninger. Hints og løsninger kan trykkes frem enkeltvis
+
+Denne første øvelsesgang består meget af at copy-paste kode fra øvelserne, og vi viser en del ting, der ikke er gennemgået endnu, men som bliver det. 
+
+
+## 1. I gang med Rstudio - Options
+
+Åbn Rstudio. 
+
+```{r echo=F, out.width='90%'}
+knitr::include_graphics("figurer/fig2_annoteret.png")
+```
+
+Øverst til venstre er *editoren*, hvor du skriver R-kode. Kode køres ved at du markerer det 
+(eller placerer cursoren i det) og klikker på "Run"-knappen eller trykker Ctrl+Enter. 
+
+Når du kører kode, sendes det til *konsollen* nederst til venstre. Resultater og meddelelser kommer ud i konsollen. Du kan også køre kode direkte i konsollen. 
+
+Øverst til højre ses et panel med flere faneblade. Det vigtigste er *Environment*, hvor du kan se de objekter, du har lavet i din nuværende R-session. 
+
+Nederst til højre viser fanebladet *Files* filerne i den folder, R pt. arbejder i, og *Help* viser dokumentationsfiler. Det er generelt dette panel, output dukker op i, når det ikke ligger i konsollen. 
+
+
+## 1.1 Options i Rstudio
+
+Under Tools -> Global options er et par vigtige settings. 
+
+Under fanen "General" er det bedst ikke at restore .Rdata ved startup og aldrig at gemme sit workspace ved exit. 
+
+```{r echo=F, out.width='70%'}
+knitr::include_graphics("figurer/options_1.PNG")
+```
+
+Under fanen "Packages" er det bedst at fjerne fluebenet fra "Enable packages pane". I Danmark Statistiks R-miljø har vi alle pakker fra Cran liggende, dermed har Packages fanen en oversigt til godt 19.000 pakker, hvilket kan gøre ens R langsom, særdeles hvis man åbner Packages fanen.
+
+
+```{r echo=F, out.width='70%'}
+knitr::include_graphics("figurer/options_2.PNG")
+```
+
+## 2. Konsollen
+Skift til konsollen (nederst til venstre) ved at klikke dernede eller med Ctrl+2
+
+I konsollen kan man skrive kommandoer, som bliver udført, når man trykker Retur 
+
+### 2.1 
+**Prøv at indtaste følgende kommandoer i konsollen: 2+2, sqrt(121) og round(0.6)**
+
+### 2.2
+Hvis vi ikke er sikker på, hvad funktionen `round` gør, kan vi finde en help-file ved at skrive `?round` eller `help(round)`. 
+
+**Brug denne help-file til at afrunde 3.141593 til tre decimaler**
+
+`r hide("Svar")`
+Vi ser på dokumentationen til funktionen `round`. Afsnittet **Description** beskriver funktionen - i dette tilfælde er det fællesdokumentation for funktionerne `ceiling`, `floor`, `trunc`, `round` og `signif`. 
+
+Under **Usage** ser vi, hvordan et kald til funktionerne ser ud, og under **Arguments** får vi en nærmere beskrivelse af argumenterne til funktionen. 
+
+Bemærk, at `round` tager to argumenter: `x` og `digits`. Argumentet `digits` har defaultværdien nul, hvormed man kan slippe af sted med ikke at angive det og bare skrive `round(3.141593)` hvis man er tilfreds med at runde af til et heltal. Hvis man specificerer `digits`, kan man bestemme antal cifre, der skal afrundes til:
+
+```{r}
+round( 3.141593, digits = 3)
+```
+
+Længere nede i dokumentationen finder vi **Details** (bemærk for eksempel, at 0.5 rundes ned til 0, mens 1.5 rundes op til 2), og længere nede **Examples**, der kan være værd at se på nogle gange. 
+`r unhide()`
+
+### 2.3 
+**Prøv at taste `5 - ` i konsollen efterfulgt af Retur. Hvad sker der, og hvordan løser man det? **
+
+`r hide("Svar")`
+Hvis man taster en ufuldstændig kommando og trykker Retur, viser R et +-prompt, som betyder, at R venter på du skriver resten af kommandoen. Du kan enten færdiggøre kommandoen eller trykke Esc for at starte forfra. 
+`r unhide()`
+
+
+## 3. Editoren
+Editoren er øverst til venstre i Rstudio (hvis du ikke ændrede det, da vi var inde under Global Options). Man kan klikke sig derhen eller bruge Ctrl+1. 
+
+### 3.1 
+Du kan finde det kode, du allerede har kørt, i History-fanebladet øverst til højre i Rstudio. Marker det kode, du vil gemme, og klik "To source" for at sende det over i editoren. 
+
+Tegnet `#` betyder, at resten af linjen bliver ignoreret, når du kører koden. Det gør `#` nyttig til at tilføje kommentaterer til din kode. Kommenter din kode, så du kan huske, hvad den går ud på, og gem koden til de første øvelser. Hvis du ikke har gjort det allerede, så lav en mappe til kursets øvelser et passende sted. Gem kodefilen der. 
+
+### 3.2 
+Kode sendes fra editoren til konsollen ved at placere cursoren i det relevante stykke kode (eller markere et stykke kode) og trykke Ctrl+Enter. 
+
+**Stil cursoren et sted i editoren og tryk Ctrl+Enter. Hvor er cursoren nu, og hvad sker der i konsollen? Hvad sker der, hvis du trykker på det lille "Run"-ikon øverst i editoren?**
+
+`r hide("Svar")`
+Kode evalueres statement for statement i konsollen, og cursoren hopper videre til næste statement, når du har sendt ét statement til konsollen. På den måde kan du køre hele din kodefil igennem ét Ctrl+R efter et andet (stort set som F3 i SAS)
+
+Hvis du markerer kode, kører Run-knappen det markerede, eller kører den hele kodefilen. Bemærk, at kørslen ikke stopper ved en fejl. 
+`r unhide()`
+
+## 4. Objekter og assignment
+Data (såsom en tekststreng, eller resultatet af en udregning, eller befolkningen pr. 1.1 2016, eller et plot) kan assignes til et objekt, så det er tilgængeligt indtil du lukker din R-session. Du laver et objekt ved at give det et navn (såsom "a" eller "MitObjekt") og fortælle, hvad der skal ligge i det. 
+
+```{r}
+# Assignment sker med pil:
+MitObjekt <- log10(30)
+```
+
+Bemærk, at din Environment-fane øverst til højre nu viser, at du har et objekt, der hedder `MitObjekt`. 
+
+### 4.1
+Når du herefter sender en kommando, der refererer til MitObjekt, erstatter R objektnavnet med data i objektet. Prøv med disse kommandoer: 
+
+```{r, eval=FALSE}
+MitObjekt
+MitObjekt+2
+```
+
+Hvad giver kommandoen `Mitobjekt-1`? Hvorfor? 
+`r hide("Hint")`
+Hvad er forskellen på `Mitobjekt` og `MitObjekt`?
+`r unhide()`
+`r hide("Svar")`
+```{r, error=TRUE}
+Mitobjekt-1
+```
+
+R er **case sensistive**, så `MitObjekt` og `Mitobjekt` er forskellige objekter, og `Mitobjekt` er ikke assignet noget. 
+`r unhide()`
+
+### 4.2
+**Når nu vi er blevet enige om, at man ikke får noget ud af at referere til objekter, der ikke er assignet, hvad skal vi så tænke om outputtet af kommandoen `pi`?**
+
+`r hide("Hint")`
+Brug help-funktionen. 
+`r unhide()`
+
+`r hide("Svar")`
+Kommandoen `?pi` sender os til dokumentationen af konstanter inkluderet i base R. Vi kan se, at der er et antal indbyggede konstanter, som ikke er synlige i environment-tabben, men er tilgængelige for beregninger
+
+**Lidt mere dybdegående**: Når en pakke bliver loaded, er dens indhold tilgængeligt, men ikke synligt i Environment-tabben (eller for funktionen `ls()`). Konstanten `pi` ligger i pakken `base`, som altid er loaded pr. default. For at få noget at tygge på, så se her:
+
+```{r}
+pi
+# Vi sætter pi til fire. Hvorfor ikke?
+pi <- 4
+pi
+
+# Men vi kan stadig tilgå den gamle værdi fra base-pakken
+base::pi
+```
+
+`r unhide()`
+
+### Om navngivning af objekter
+
+Navne kan ikke starte med tal, eller indeholde en række specialtegn, såsom ^, !, $, @, +, -, /, eller *
+
+Det er en god vane at navngive sine objekter på en informativ måde - så `stikproeve`, `population` eller `vaegte_RegionSyddanmark`er bedre navne end `a`, `b` og `C`, og `logaritmen.af.30` er et bedre navn end `MitObjekt`.  
+
+Hvis du assigner en ny værdi til et objekt, bliver det overskrevet - her hjælper informative navne os til at vælge et navn, der ikke er taget allerede. 
+
+Objekter kan fjernes fra dit workspace med `rm(MitObjekt)`, og du kan se listen af objekter i Environment-fanen eller med kommandoen `ls()`. 
+
+## 5. Pakker
+
+Når vi har henvist til funktioner som `ls()`, `sqrt()` og `log()`, er det funktioner, der ligger i en af de pakker, der loader automatisk, når man åbner R. Der er tusindvis af andre pakker, og hvis vi vil bruge ting i dem, skal vi loade pakken med kommandoen `library`. 
+
+Indlæs pakken `stringr`. Kan du se, hvad den gør, og hvad den indeholder af datasæt og funktioner?
+
+`r hide("Hint")`
+Se på dokumentationen til funktionen `data` og evt. `lsf.str` og `library`
+`r unhide()`
+
+`r hide("Svar")`
+```{r}
+# library indlæser pakker
+library(stringr)
+
+help("stringr-package")
+```
+
+`stringr` er altså en pakke til at manipulere tekststrenge. Det meste af hvad den gør kan gøres i base r, eller med  `stringi`-pakken, som den er en wrapper for, men `stringr` prøver at være mere tilgængelig.  
+
+Vi kan få en liste over objekter i pakken ved at klikke på "index" nederst i dokumentationen, eller med kommandoen `lsf.str("package:stringr)`. Kommandoen `data( package="stringr")` viser os de datasæt, der er inkluderet i `stringr`.
+
+
+```{r echo=F, out.width='100%'}
+knitr::include_graphics("figurer/data_in_stringr.PNG")
+```
+
+`r unhide()`
+
+Man kan få adgang til en funktion (eller noget data) i en pakke uden at loade pakken med operatoren `::`
+```{r, eval=FALSE}
+# Konstruerer en vektor med datapunkter
+nogle.data <- rnorm( 100, mean=176, sd=7)
+
+# Laver et histogram med funktionen gghistogram fra pakken ggpubr, som jeg ikke gider loade
+ggpubr::gghistogram(nogle.data)
+```
+
+
+
+
+## 6. Funktioner
+Vi kaldte funktionen `round` tidligere - funktionskald har formen `noget(...)`. Langt de fleste funktioner, vi bruger, er noget, andre har skrevet, og som vi loader med en pakke (eller som eventuelt er i en af de pakker, der loader automatisk, såsom `base` og `stats`). Det betyder, at vi kan læse dokumentation for dem med `help` eller `?`
+
+Funktionen `word` ligger i pakken `stringr`. Tjek, hvad den gør. 
+
+`r hide("Svar")`
+`word` trækker ord ud af en sætning. 
+`r unhide()`
+
+Koden nedenfor udtrækker efternavne fra en vektor af navne. Prøv at modificere den til at udtrække alt før efternavnet (for- og mellemnavne)
+
+```{r}
+c( "Anne Vinkel Hansen", "Joen Petur Jacobsen", "Morten Hallas") |> 
+   word(start=-1)
+```
+`r hide("Svar")`
+```{r}
+c( "Anne Vinkel Hansen", "Joen Petur Jacobsen", "Morten Hallas") |> 
+   word( start=1,end=-2)
+```
+`r unhide()`
+
+
+<!-- ## 6.1 At kode sine egne funktioner -->
+
+<!-- At kode en funktion tager denne form: -->
+
+<!-- ```{r, eval=FALSE} -->
+<!-- Navn.paa.min.funktion <- function( argument1, argument2 = defaultværdi, ... ){ -->
+<!--    Operationer på argumenterne -->
+<!--    return( output ) -->
+<!-- } -->
+<!-- ``` -->
+
+<!-- Eller, mere konkret: -->
+
+<!-- ```{r} -->
+<!-- kvadratet <- function(x){ -->
+<!--    kvadrat <- x*x -->
+<!--    return(kvadrat) -->
+<!-- } -->
+
+<!-- kvadratet(4) -->
+<!-- ``` -->
+
+<!-- Bemærk, at vores environment nu indeholder en funktion med navn "`kvadratet`". Bemærk også, at selv om der under kørslen af funktionen bliver konstrueret et objekt, der hedder `kvadrat`, ligger dette objekt ikke i environmentet.  -->
+
+<!-- Lad os kode en funktion, der beregner arealet af en cirkel, givet dens radius -->
+
+<!-- `r hide("Hint")` -->
+<!-- Arealet er $\pi*r^2$ -->
+<!-- `r unhide()` -->
+
+<!-- `r hide("Svar")` -->
+<!-- ```{r} -->
+<!-- area.circle <- function( radius ){ -->
+<!--    area <- base::pi*radius^2 -->
+<!--    return( area ) -->
+<!-- } -->
+
+<!-- area.circle(4) -->
+<!-- ``` -->
+<!-- `r unhide()` -->
+
+<!-- ## 6.2 Defaultværdier til argumenter -->
+
+<!-- Som vi husker fra dokumentationen til funktionen `log`, har `log` to argumenter - `x` som er det tal, vi tager logaritmen af, og `base` som er basis for logaritmen. Argumentet `base` har defaultværdien `exp(1)`, og det betyder, vi ikke behøver specificere det argument, hvis vi er ok med defaultværdien -->
+<!-- ```{r, error=TRUE} -->
+<!-- log( x = 10) -->
+<!-- log(x=10, base=10) -->
+<!-- log( base=10) -->
+<!-- ``` -->
+<!-- Prøv at ændre funktionen for cirklens areal, så den kan tage enten en radius eller en diameter som argument. Sæt "radius" til default.  -->
+<!-- `r hide("Hint 1")` -->
+<!-- Man kan tilføje en parameter, der angiver, om det er diameter eller radius, man har givet.  -->
+<!-- `r unhide()` -->
+
+<!-- `r hide("Hint 1")` -->
+<!-- Man kan køre kode betinget af værdien af objekter med **if** og **if-else**.  -->
+<!-- ```{r, eval=FALSE} -->
+<!-- if( objekt == vaerdi ){ -->
+<!--    gør noget -->
+<!-- }else{ -->
+<!--    gør noget andet -->
+<!-- } -->
+<!-- ``` -->
+<!-- Bemærk, at vi sammenligner (`objekt == vaerdi`) med dobbelte lighedstegn.  -->
+<!-- `r unhide()` -->
+
+<!-- `r hide("Svar")` -->
+<!-- Én mulighed er -->
+<!-- ```{r} -->
+<!-- area.circle <- function( x, type = "radius"){ -->
+<!--    if(type=="radius"){  -->
+<!--       radius <- x -->
+<!--    } else { -->
+<!--          if(type=="diameter"){ -->
+<!--             radius <- x/2 -->
+<!--          } else { -->
+<!--          error("Type skal være enten 'radius' eller 'diameter'") -->
+<!--       } -->
+<!--    }  -->
+<!--    area <- base::pi*radius^2 -->
+<!--    return( area ) -->
+<!-- } -->
+
+<!-- area.circle(2) -->
+<!-- area.circle(2, type="diameter") -->
+<!-- ``` -->
+<!-- `r unhide()` -->
+
