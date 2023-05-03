@@ -163,7 +163,7 @@ The above links are useful references that connect to today's materials.
 height = "300" width="450" frameborder="0"> </iframe>
 
 <br>
-See also [this `rmarkdown` cheat sheet](Contents/Part_A/rmarkdown_cheat_sheet.pdf).
+See also [this `R Markdown` cheat sheet](Contents/Part_A/rmarkdown_cheat_sheet.pdf).
 
 # Tuesday
 
