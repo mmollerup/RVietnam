@@ -240,9 +240,7 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
     - [Linear Regression](Contents/Part_G/Linear_Regression.html){target="_blank"}
     - [Lecture G](Contents/Part_G/Lecture_G.html){target="_blank"}
     - [Practical G](Contents/Part_G/Practical_G_webex.html){target="_blank"}
-    - [Ideas for practical](Contents/Part_G/Some_graphs.html){target="_blank"}   XXXX KAN IKKE KØRE - HAR IKKE DATAFIL XXXX
-    - [`Some_graphs.Rmd`](Contents/Part_G/Some_graphs.Rmd) Corresponding Rmd file for the Ideas  
-    
+
 All lectures are in `html` format. Practicals are provided both as naked questions but also with ample explanations and solutions - choose according to your taste!
 
 
@@ -250,8 +248,6 @@ All lectures are in `html` format. Practicals are provided both as naked questio
 
 ### Useful references
 
-<!-- - [`magrittr`](https://magrittr.tidyverse.org) -->
-<!-- - [`R` for Data Science](http://r4ds.had.co.nz) - [Chapter 18 on pipes](http://r4ds.had.co.nz/pipes.html) -->
 - [Create awesome HTML tables with `knitr::kable` and `kableExtra`](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)
 
 - [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)
