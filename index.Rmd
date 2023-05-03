@@ -139,10 +139,10 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
     - [`notebook.R`](Contents/Part_A/notebook.R){target="_blank"}
     - [`markdown.Rmd`](Contents/Part_A/markdown.Rmd){target="_blank"}
 - Part B: How is `R` organized?
-    - [Lecture B](Contents/Part_B/Lecture-B_november.html){target="_blank"}
+    - [Lecture B](Contents/Part_B/Lecture_B.html){target="_blank"}
     - [Practical B](Contents/Part_B/Practical_B.html){target="_blank"}
     - [Practical B with solutions](Contents/Part_B/Practical_B_walkthrough.html){target="_blank"}
-    - [`boys.RData`](Contents/Part_B/boys.RData)
+    - [`boys.RData`](Contents/Part_B/boys.RData) data set
 
 All lectures are in `html` format. Practicals are provided both as naked questions but also with ample explanations and solutions - choose according to your taste!
 
@@ -240,7 +240,7 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
     - [Lecture G](Contents/Part_G/Lecture_G.html){target="_blank"}
     - [Practical G](Contents/Part_G/Practical_G_webex.html){target="_blank"}
     - [Ideas for practical](Contents/Part_G/Some_graphs.html){target="_blank"}   XXXX KAN IKKE KØRE - HAR IKKE DATAFIL XXXX
-    - [`Some_graphs.Rmd`](Contents/Part_G/Some_graphs.Rmd) Corresponding Rmd file for the Ideas.  
+    - [`Some_graphs.Rmd`](Contents/Part_G/Some_graphs.Rmd) Corresponding Rmd file for the Ideas  
     
 All lectures are in `html` format. Practicals are provided both as naked questions but also with ample explanations and solutions - choose according to your taste!
 
