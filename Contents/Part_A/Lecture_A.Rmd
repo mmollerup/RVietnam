@@ -18,6 +18,7 @@ output:
 ## Program
 
 
+<<<<<<< HEAD
 | Day         | Hours       | Topic                               |
 |:------------|:------------|:------------------------------------|
 | *Monday*    | 09.00-11.30 | Introduction to R and Rstudio (A)   |
@@ -30,6 +31,49 @@ output:
 |             | 13.30-16.30 | Outstanding issues, Q and A         |
 
 
+=======
+<!-- | Day         | Hours       | Topic                               |  -->
+<!-- |:------------|:------------|:------------------------------------| -->
+<!-- | *Tuesday*   | 09.00-12.00 | Installation of R and RStudio       | -->
+<!-- |             | 12.30-16.00 | Introduction to R and Rstudio (A+B) | -->
+<!-- | *Wednesday* | 09.00-12.00 | Data manipulation (C)               | -->
+<!-- |             | 13.30-16.30 | Analyzing data (D)                  | -->
+<!-- | *Thursday*  | 09.00-12.00 | Data visualization  (E)             | -->
+<!-- |             | 13.30-16.30 | Loops and functions (F)             | -->
+<!-- | *Friday*    | 09.00-11.30 | Outstanding issues, Q and A         | -->
+
+
+
+|  Time       | Topic                                           |
+|:------------|:------------------------------------------------|
+| *Monday*    |                                                 |
+| 09.00-11.30 | Introduction to R and Rstudio (A+B)             |
+| 13.30-16.30 | How is R organized?                             |
+| *Tuesday*   |                                                 |
+| 08.30-11.30 | Data manipulation (C)                           |
+| 13.30-16.30 | Analyzing data (D)                              |
+| *Wednesday* |                                                 |
+| 08.30-11.30 | Data visualization  (E)                         |                                         
+| 13.30-16.30 | Loops and functions (F)                         |
+| *Thursday*  |                                                 |
+| 08.30-11.30 | Data visualization  (E)                         |                                         
+| 13.30-16.30 | Outstanding issues, Q and A                     |
+XXXXXXXXXXXX
+
+
+<!-- <center> -->
+<!-- <img src="figures/schedule.png" alt="HTML5 Icon" width = 90%> -->
+<!-- </center> -->
+
+<!-- # Goal of this course -->
+<!-- ## Learn to keep your *cool* -->
+<!-- <center> -->
+<!--   <img src="figures/state_programming.png" alt="HTML5 Icon" width = 100%> -->
+<!-- </center> -->
+
+<!-- and build the foundation for a succesfull scripting career -->
+
+>>>>>>> 126da01d39bc0336f9d60af15b1001af4ec3c71d
 # What is R?
 
 ## Software
