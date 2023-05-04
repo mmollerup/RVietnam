@@ -202,8 +202,7 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
 
 - Part E: Data visualization
     - [Lecture E](Contents/Part_E/Lecture_E.html){target="_blank"}
-    - [Practical E with base R](Contents/Part_E/Practical_E_webex.html){target="_blank"}
-    - [Practical E with ggplot](Contents/Part_E/Practical_E_webex_ggplot.html){target="_blank"}
+    - [Practical E](Contents/Part_E/Practical_E_webex.html){target="_blank"}
     - [`DK_map.shp`](Contents/Part_E/DK_map.shp), [`DK_map.shx`](Contents/Part_E/DK_map.shx), [`DK_map.dbf`](Contents/Part_E/DK_map.dbf) shapefiles for mapping data on Danish municipalities
 - Part F: Loops and functions
     - [Lecture F](Contents/Part_F/Lecture_F.html){target="_blank"}
