@@ -15,17 +15,16 @@ library(webexercises)
 
 ---
 
-
-Today we are going to get acquainted with `R`. A convenient way to work with `R` is through `RStudio` which adds many features and convenient options to the plain `R` interface. Most of these features go beyond the scope of this course, but as you will develop your `R` skillset, you might run into the need for them and hence `RStudio` so it is worthwhile to get to know `RStudio` right from the beginning. 
+Today we are going to get acquainted with R. A convenient way to work with R is through RStudio which adds many features and convenient options to the plain R interface. Most of these features go beyond the scope of this course, but as you will develop your R skillset, you might run into the need for them and hence RStudio so it is worthwhile to get to know RStudio right from the beginning. 
  
-If you have no experience with `R`, you will learn the most from following this document step by step. If you have some experience with `R` already,  I suggest you try solving the questions without looking at the answers/walkthrough. You can always refer to the solutions as needed. 
+If you have no experience with R, you will learn the most from following this document step by step. If you have some experience with R already,  I suggest you try solving the questions without looking at the answers/walkthrough. You can always refer to the solutions as needed. 
 
 If you have any questions or if you feel that some code should be elaborated, feel free to ask.
 
 ---
 
 #### Exercises
-We start with the very basics and will move towards more advanced operations in `R`. First we will get acquainted with the language and the environment we work in. 
+We start with the very basics and will move towards more advanced operations in R. First we will get acquainted with the language and the environment we work in.  We run exercises with hints and solutions. Hints and solutions can be printed out individually.
 
 ---
 
@@ -35,14 +34,14 @@ We start with the very basics and will move towards more advanced operations in 
 Open RStudio.  
 
 The following window will appear. You might be faced with a bit different layout, but don't dispair. Close to everything can be configured to your likings, including the colour scheme!   
-![alt text](figuresPractical/fig1.png)
+![alt text](figuresPractical/rstudio_startup.png)
 
-RStudio is divided in 3 panes, namely the console, the environment/history pane and the pane where we can access our files, plots, the help files, make packages and view our data objects. You can change the order of the panes to your liking through `RStudio`'s preferences. I did, that is why your pane layout might differ from the layout in the above screenshot.
+RStudio is divided in 3 panes, namely the console, the environment/history pane and the pane where we can access our files, plots, the help files, make packages and view our data objects. You can change the order of the panes to your liking through RStudio's preferences. 
 
-If we open an `R`-script (i.e. a file that contains `R` code), a fourth pane opens. 
+If we open an R-script (i.e. a file that contains R code), a fourth pane opens. 
+
 
 ### 1.1 Options in RStudio
-
 
 Under the menu "Tools $\rightarrow$ Global Options..." are a few important settings.
 
@@ -50,11 +49,8 @@ Under the "General" tab, it is best not to restore .Rdata at startup and never t
 
 
 ```{r echo=F, out.width='70%'}
-#knitr::include_graphics("figurer/options_1.PNG")
+knitr::include_graphics("figuresPractical/rstudio_options.png")
 ```
-
-XXXX FIGURE XXXX
-
 
 
 ## 2. Console
@@ -182,7 +178,7 @@ R is **case sensitive**, so `MyObject` and `Myobject` are different objects, and
 Create a R project in the folder you have the exercises in.
 
 `r hide("Solution")` 
-File $\rightarrow$ New Project $\rightarrow$ Existing directory
+File $\rightarrow$ New Project...$\rightarrow$ Existing directory
 `r unhide()`
 
 Note that when you opened your project, your log and environment were cleared.
@@ -225,6 +221,6 @@ saveRDS( a.vektor, file="data/a_vector.RDS")
 ```
 The path here is relative to our working directory, so if our working directory is at "C:/my files/R-course/", the file address is "C:/my files/R-course/data/an uninteresting vector.RDS" . But we can move the whole folder to another drive or somewhere else in the file tree without having to change paths in our code file.
 
-If we don't want to go to a subfolder, but instead go up the file hierarchy, we can use `saveRDS(en.vector, file="../")`. The path is still relative to our working directory.
+If we don't want to go to a subfolder, but instead go up the file hierarchy, we can use `saveRDS(a.vector, file="../")`. The path is still relative to our working directory.
 `r unhide()`
 
