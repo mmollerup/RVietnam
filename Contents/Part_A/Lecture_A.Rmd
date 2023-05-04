@@ -14,70 +14,25 @@ output:
 ---
 
 
-<!-- --- -->
-<!-- title: "Introduction" -->
-<!-- author: "Peter Stoltze and Anne Vinkel Hansen" -->
-<!-- date: "Statistical Programming with R" -->
-<!-- output: -->
-<!--   ioslides_presentation: -->
-<!--     css: css/style.css -->
-<!--     logo: figures/logo_en.png -->
-<!--     transition: 0 -->
-<!--     # smaller: yes -->
-<!--     # widescreen: yes -->
-<!--   # html_document: -->
-<!--   #   # css: style_ho.css -->
-<!--   #   toc: true -->
-<!--   #   toc_depth: 5 -->
-<!--   #   toc_float: true -->
-<!--   #   number_sections: false -->
-
-<!-- --- -->
-
 # Overview of this course
 ## Program
 
 
-<!-- | Day         | Hours       | Topic                               |  -->
-<!-- |:------------|:------------|:------------------------------------| -->
-<!-- | *Tuesday*   | 09.00-12.00 | Installation of R and RStudio       | -->
-<!-- |             | 12.30-16.00 | Introduction to R and Rstudio (A+B) | -->
-<!-- | *Wednesday* | 09.00-12.00 | Data manipulation (C)               | -->
-<!-- |             | 13.30-16.30 | Analyzing data (D)                  | -->
-<!-- | *Thursday*  | 09.00-12.00 | Data visualization  (E)             | -->
-<!-- |             | 13.30-16.30 | Loops and functions (F)             | -->
-<!-- | *Friday*    | 09.00-11.30 | Outstanding issues, Q and A         | -->
-
-
-
-|  Time       | Topic                                           |
-|:------------|:------------------------------------------------|
-| *Monday*    |                                                 |
-| 09.00-11.30 | Introduction to R and Rstudio (A+B)             |
-| 13.30-16.30 | How is R organized?                             |
-| *Tuesday*   |                                                 |
-| 08.30-11.30 | Data manipulation (C)                           |
-| 13.30-16.30 | Analyzing data (D)                              |
-| *Wednesday* |                                                 |
-| 08.30-11.30 | Data visualization  (E)                         |                                         
-| 13.30-16.30 | Loops and functions (F)                         |
-| *Thursday*  |                                                 |
-| 08.30-11.30 | Data visualization  (E)                         |                                         
-| 13.30-16.30 | Outstanding issues, Q and A                     |
-XXXXXXXXXXXX
-
+| Day         | Hours       | Topic                               |
+|:------------|:------------|:------------------------------------|
+| *Monday*    | 09.00-11.30 | Installation of R and RStudio       |
+|             | 13.30-16.30 | Introduction to R and Rstudio (A+B) |
+| *Tuesday*   | 08.30-11.30 | Data manipulation (C)               |
+|             | 13.30-16.30 | Analyzing data (D)                  |
+| *Wednesday* | 08.30-11.30 | Data visualization  (E)             |
+|             | 13.30-16.30 | Loops and functions (F)             |
+| *Thursday*  | 08.30-11.30 | Linear regression and R Markdown (G)|
+|             | 13.30-16.30 | Outstanding issues, Q and A         |
 
 <!-- <center> -->
 <!-- <img src="figures/schedule.png" alt="HTML5 Icon" width = 90%> -->
 <!-- </center> -->
 
-<!-- # Goal of this course -->
-<!-- ## Learn to keep your *cool* -->
-<!-- <center> -->
-<!--   <img src="figures/state_programming.png" alt="HTML5 Icon" width = 100%> -->
-<!-- </center> -->
-
-<!-- and build the foundation for a succesfull scripting career -->
 
 # What is R?
 

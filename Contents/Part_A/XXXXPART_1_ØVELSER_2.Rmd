@@ -1,0 +1,225 @@
+---
+title: "Introduktion til R i Danmarks Statistik"
+author: "Metode og Analyse"
+output: webexercises::webexercises_default
+---
+
+# Introduktion del 2
+
+```{r message=FALSE, warning=FALSE, echo=F}
+
+knitr::opts_chunk$set(message = F, results = F)
+library("webexercises")
+
+```
+
+## 1. Projekter i Rstudio
+
+### 1.1 Lav et projekt
+Lav et r-projekt i den mappe, du har øvelserne i. 
+
+`r hide("Hint")` 
+File -> New Project -> Existing directory
+`r unhide()`
+
+Bemærk, at da du åbnede dit projekt, blev din log og dit environment tømt. 
+
+
+**Hvad sker der, hvis du sender kommandoen `getwd()` til konsollen?**
+
+`r hide("Svar")`
+Når du åbner et projekt, bliver dit working directory sat dér. Det betyder, at R leder efter filer i den mappe, hvis du ikke giver andre instrukser, og lægger filer, du vil gemme dér.
+`r unhide()`
+
+### 1.2
+I "Files"-fanebladet nederst til højre kan du se, hvad der ligger i dit working directory. 
+
+Prøv at køre
+
+```{r, eval=FALSE}
+en.vektor <- 1:5
+saveRDS(en.vektor, file="en vektor.RDS")
+```
+
+Bemærk, at `en.vektor` nu ligger som en `RDS`-fil i dit working directory. Du kan læse den ind ved at klikke på linket i "Files"-fanen, eller med funktionen `readRDS``.
+
+
+### 1.3
+Vi vil tit gerne arbejde relativt til vores working directory. Hvis du laver en undermappe til data, hvordan vil du så gemme et objekt dér?
+
+`r hide("Hint")`
+Hvis du skriver `saveRDS( en.vektor, file = "")`, kan autocomplete (tab-tasten) sandsynligvis få dig resten af vejen.
+`r unhide()`
+`r hide("Svar")`
+Hvis undermappen hedder "data", skriver vi: 
+```{r, eval=FALSE}
+saveRDS( en.vektor, file="data/en vektor.RDS")
+```
+Stien her er relativ til vores working directory, så hvis vores working directory er på "C:/mine filer/R-kursus/", er filadresssen "C:/mine filer/R-kursus/data/en uinteressant vektor.RDS". Men vi kan flytte hele mappen til et andet drev eller et andet sted i filtræet uden at skulle ændre stier i vores kodefil. 
+
+Hvis vi ikke vil gå til en undermappe, men i stedet gå op i filhierarkiet, kan vi bruge `saveRDS(en.vektor, file="../")`. Stien er stadig relativ til vores working directory. 
+
+`r unhide()`
+
+## 2. Tibbles og data.frames
+Indlæs pakken `tidyverse`. 
+
+I mappen på Q-drevet ligger filen `bef_kommune.RDS`. Læg en kopi i din mappe med data til kurset. Data kan læses ind med `readRDS()`
+
+```{r, message=FALSE}
+library(tidyverse) # Vi behøver ikke tidyverse for at indlæse data, men det er rarere at have data som en tibble
+
+bef_kommune <- readRDS("data/bef_kommune.RDS")
+```
+
+### 2.1 
+Du kan skrive navnet på dit objekt i konsollen for at se det. Andre funktioner til at inspicere et datasæt er 
+```{r, eval=FALSE}
+head()
+tail()
+glimpse()
+str()
+summary()
+```
+Forsøg dig med disse funktioner, og find ud af, hvad de gør
+
+### 2.2
+**Hvad er typerne på variablene i datasættet? Hvor mange værdier af variablene `Koen`, `Dato` og `Kommune` optræder i data?**
+
+`r hide("Hint")`
+I sliden om "Base R vs tidyverse" optalte vi antal individer i hver værdi af variablen `sex`
+`r unhide()`
+
+`r hide("Svar")`
+Typerne kan f.eks. ses ved at printe datasættet, med `glimpse` eller ved at se på data i Environment-fanebladet. 
+
+```{r}
+bef_kommune |> 
+   count(Koen)
+
+# Kommune og Dato kan potentielt set have mange værdier, så vi kunne prøve med summarise
+bef_kommune |> 
+   summarise( n_kommune = n_distinct( Kommune)
+            , n_dato = n_distinct( Dato))
+```
+`r unhide()`
+
+## 3. Pipes
+Pipes bryder kode op i sekventielle trin, hvilket ofte er mere læseligt. Eksempelvis gør dette kode det samme med og uden pipes
+
+```{r, warning=FALSE, eval=FALSE}
+# Tidyverse uden pipes
+ggpubr::gghistogram( pull( filter( bef_kommune, Kommune=="Rødovre") , Folketal ), bins=20)
+
+# Base R, for at være fair 
+ggpubr::gghistogram( bef_kommune$Folketal[ bef_kommune$Kommune=="Rødovre"], bins=20)
+
+# Tidyverse med pipes
+bef_kommune |> # Vi tager vores data
+   filter( Kommune=="Rødovre" ) |> # Vi begrænser til Rødovre
+   pull( Folketal) |> # Plotfunktionen forventer en vektor, så vi udtrækker den variabel, vi vil plotte
+   ggpubr::gghistogram( bins=20) # Vi laver et histogram
+```
+
+### 3.1 
+Begræns data til kvinder fra Slagelse kommune
+`r hide("Svar")`
+```{r, eval = FALSE}
+bef_kommune |> # Vi tager vores data
+   filter( Kommune=="Slagelse" & Koen =="Kvinder")
+```
+`r unhide()``
+
+### 3.2
+Funktionen `arrange` sorterer data efter en eller flere variable. Brug den til at finde observationerne med de højeste og laveste værdier af `Folketal`
+`r hide("Hint")`
+Du kan stoppe den ind i en pipe efterfulgt af `head` eller `tail`
+`r unhide()`
+`r hide("Svar")`
+```{r}
+bef_kommune |> arrange( Folketal) |> head()
+
+bef_kommune |> arrange( Folketal) |> tail()
+```
+`r unhide()`
+
+### 3.3
+Funktionen `mutate` bruges til at tilføje variable til en tibble. 
+
+```{r}
+bef_kommune |> 
+   mutate( Folketal.i.tusind = round( Folketal/1000))
+```
+
+Bemærk, at siden vi ikke har assignet output her til et objekt, er variablen `Folketal.i.tusind` ikke blevet tilføjet til data. Det kan gøres med
+```{r, eval=FALSE}
+bef_kommune <- bef_kommune |> 
+   mutate( Folketal.i.tusind = round( Folketal/1000))
+```
+
+Lav en variabel, der indeholder år, måned og ugedag for observationen, og en variabel, der er syv dage efter `Dato`
+
+`r hide("Hint")`
+Funktionerne `year`, `month` og `wday` i pakken lubridate
+`r unhide()`
+`r hide("Svar")`
+```{r}
+library(lubridate)
+
+bef_kommune <- bef_kommune |> 
+   mutate( Aar = year(Dato)
+         , Maaned = month( Dato, abbr=FALSE, label=TRUE )
+         , Ugedag = wday( Dato, label = TRUE, abbr = FALSE)
+         , Dato_plus_7 = Dato + 7 )
+```
+
+Datoer er grundlæggende set formatterede værdier af "antal dage siden 1. januar 1970", hvormed de kan behandles som tal (så `Dato+7` er syv date efter `Dato`).
+
+**En note om argumenter til funktioner: **
+
+Funktionen `month` i `lubridate`-pakken finder måneden for en dato. Hvis vi ser på dokumentationen, har den fire argumenter: `x`, `label`, `abbr` og `locale`. Funktionen har defaultværdier for argumenterne `label`, `abbr` og `locale` (henholdsvis FALSE, TRUE og Sys.getlocale("LC_TIME")), så hvis `MinDato` er en dato (f.eks. `MinDato <- dmy("26DEC1977")` er det nok at skrive `month( MinDato )`
+
+Ved at specificere værdier for argumenterne `label` og `abbr`, kan vi få måned som tekst i stedet for nummer, og vælge om vi vil have en forkortelse eller månedens fulde navn.
+
+`r unhide()`
+
+Begræns data til observationer lavet på mandage
+`r hide("Svar")`
+```{r}
+bef_kommune |> 
+   filter( Ugedag == "mandag")
+```
+`r unhide()`
+
+Begræns data til observationer lavet første april. 
+
+`r hide("Hint")`
+Funktionen `day` giver os datoen i måneden. 
+`r unhide()`
+`r hide("Svar")`
+```{r, eval=FALSE}
+# Som data ligger, kan vi nøjes med
+bef_kommune |> 
+   filter( Maaned == "april")
+
+# Mere genereliserbar løsning
+bef_kommune |> 
+   filter( Maaned == "april" & day(Dato)==1 )
+```
+`r unhide()`
+
+Lav en variabel, der indeholder antal dage mellem Dato og første april 2000.
+Lav en variabel der indeholder antal dage mellem Dato og første april det samme år
+
+`r hide("Hint")`
+Funktionerne `dmy`, `mdy` og `ymd` laver tal og tekststrenge om til datoer. Funktionerne `paste` og `paste0` konkatenerer strenge
+`r unhide()`
+`r hide("Svar")`
+```{r}
+bef_kommune |> 
+   mutate( apr1 = dmy(paste0("01APR", Aar))
+         , dage_siden = apr1 - Dato )
+```
+Bemærk, at typen af `dage_siden` er "drtn". Til nogle formål (hvis f.eks vi vil gange en dagstakst på og få en pris) vil det være nødvendigt at omforme til en numerisk variabel med `as.numeric()`
+`r unhide()`
+
