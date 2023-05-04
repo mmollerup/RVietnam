@@ -69,7 +69,7 @@ Try entering the following commands in the console: `2+2`, `sqrt(121)` and `roun
 
 ### Exercise 2.2
 
-If we are not sure what the `round` function does, we can find a help file by typing `?round` or `help(round)`. Use this help to round 3.141593 to three decimal places
+If we are not sure what the `round` function does, we can find a help file by typing `?round` or `help(round)`. Use this help to round 3.141593 to three decimal places.
 
 `r hide("Solution")`
 
@@ -174,4 +174,57 @@ R is **case sensitive**, so `MyObject` and `Myobject` are different objects, and
 <!-- `r unhide()` -->
 
 
+## 5. Projects in RStudio
+
+### Exercise 5.1 
+
+
+Create a R project in the folder you have the exercises in.
+
+`r hide("Solution")` 
+File $\rightarrow$ New Project $\rightarrow$ Existing directory
+`r unhide()`
+
+Note that when you opened your project, your log and environment were cleared.
+
+
+What happens if you send the `getwd()` command to the console?
+
+
+`r hide("Solution")`
+When you open a project, your working directory is set there. This means that R will look for files in that directory, if you don't give other instructions, and put files you want to save there.
+`r unhide()`
+
+### Exercise 5.2
+In the "Files" tab at the bottom right, you can see the working directory.
+
+Try running
+
+
+```{r, eval=FALSE}
+a.vector <- 1:5
+saveRDS(a.vector, file="a_vector.RDS")
+```
+
+Note that `a.vector` is now located as an `RDS` file in your working directory. You can read it in by clicking on the link in the "Files" tab, or with the ``readRDS'' function.
+
+
+### Exercise 5.3
+
+We often want to work relative to our working directory. If you make a subfolder for data, how would you store an object there?
+
+`r hide("Hint")`
+If you type `saveRDS( a.vector, file = "")`, autocomplete (the tab key) can probably get you the rest of the way.
+`r unhide()`
+
+`r hide("Solution")`
+If the subfolder is called "data", we write:
+
+```{r, eval=FALSE}
+saveRDS( a.vektor, file="data/a_vector.RDS")
+```
+The path here is relative to our working directory, so if our working directory is at "C:/my files/R-course/", the file address is "C:/my files/R-course/data/an uninteresting vector.RDS" . But we can move the whole folder to another drive or somewhere else in the file tree without having to change paths in our code file.
+
+If we don't want to go to a subfolder, but instead go up the file hierarchy, we can use `saveRDS(en.vector, file="../")`. The path is still relative to our working directory.
+`r unhide()`
 

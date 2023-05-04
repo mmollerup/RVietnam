@@ -477,7 +477,7 @@ press Return.</p>
 <p>If we are not sure what the <code>round</code> function does, we can
 find a help file by typing <code>?round</code> or
 <code>help(round)</code>. Use this help to round 3.141593 to three
-decimal places</p>
+decimal places.</p>
 <div class="webex-solution">
 <button>
 Solution
@@ -617,6 +617,70 @@ is not assigned anything.</p>
 <!-- 
 </div>
  -->
+</div>
+</div>
+<div id="projects-in-rstudio" class="section level2">
+<h2>5. Projects in RStudio</h2>
+<div id="exercise-5.1" class="section level3">
+<h3>Exercise 5.1</h3>
+<p>Create a R project in the folder you have the exercises in.</p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<p>File <span class="math inline">\(\rightarrow\)</span> New Project
+<span class="math inline">\(\rightarrow\)</span> Existing directory</p>
+</div>
+<p>Note that when you opened your project, your log and environment were
+cleared.</p>
+<p>What happens if you send the <code>getwd()</code> command to the
+console?</p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<p>When you open a project, your working directory is set there. This
+means that R will look for files in that directory, if you don&#39;t give
+other instructions, and put files you want to save there.</p>
+</div>
+</div>
+<div id="exercise-5.2" class="section level3">
+<h3>Exercise 5.2</h3>
+<p>In the &quot;Files&quot; tab at the bottom right, you can see the working
+directory.</p>
+<p>Try running</p>
+<pre class="r"><code>a.vector &lt;- 1:5
+saveRDS(a.vector, file=&quot;a_vector.RDS&quot;)</code></pre>
+<p>Note that <code>a.vector</code> is now located as an <code>RDS</code>
+file in your working directory. You can read it in by clicking on the
+link in the &quot;Files&quot; tab, or with the ``readRDS&#39;&#39; function.</p>
+</div>
+<div id="exercise-5.3" class="section level3">
+<h3>Exercise 5.3</h3>
+<p>We often want to work relative to our working directory. If you make
+a subfolder for data, how would you store an object there?</p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>If you type <code>saveRDS( a.vector, file = &quot;&quot;)</code>, autocomplete
+(the tab key) can probably get you the rest of the way.</p>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<p>If the subfolder is called &quot;data&quot;, we write:</p>
+<pre class="r"><code>saveRDS( a.vektor, file=&quot;data/a_vector.RDS&quot;)</code></pre>
+<p>The path here is relative to our working directory, so if our working
+directory is at &quot;C:/my files/R-course/&quot;, the file address is &quot;C:/my
+files/R-course/data/an uninteresting vector.RDS&quot; . But we can move the
+whole folder to another drive or somewhere else in the file tree without
+having to change paths in our code file.</p>
+<p>If we don&#39;t want to go to a subfolder, but instead go up the file
+hierarchy, we can use <code>saveRDS(en.vector, file=&quot;../&quot;)</code>. The
+path is still relative to our working directory.</p>
+</div>
 </div>
 </div>
 
