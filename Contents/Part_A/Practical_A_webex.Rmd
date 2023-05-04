@@ -22,246 +22,152 @@ If you have no experience with `R`, you will learn the most from following this 
 
 If you have any questions or if you feel that some code should be elaborated, feel free to ask.
 
+---
+
+#### Exercises
+We start with the very basics and will move towards more advanced operations in `R`. First we will get acquainted with the language and the environment we work in. 
 
 ---
 
 
+## 1. Get started with RStudio 
+
+Open RStudio.  
+
+The following window will appear. You might be faced with a bit different layout, but don't dispair. Close to everything can be configured to your likings, including the colour scheme!   
+![alt text](figuresPractical/fig1.png)
+
+RStudio is divided in 3 panes, namely the console, the environment/history pane and the pane where we can access our files, plots, the help files, make packages and view our data objects. You can change the order of the panes to your liking through `RStudio`'s preferences. I did, that is why your pane layout might differ from the layout in the above screenshot.
+
+If we open an `R`-script (i.e. a file that contains `R` code), a fourth pane opens. 
+
+### 1.1 Options in RStudio
 
 
+Under the menu "Tools $\rightarrow$ Global Options..." are a few important settings.
+
+Under the "General" tab, it is best not to restore .Rdata at startup and never to save your workspace at exit.
 
 
-ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
-
-
-
-
-The following packages are required for this practical:
-```{r, message=FALSE}
-library(dplyr)
-library(magrittr)
-library(mice)
+```{r echo=F, out.width='70%'}
+#knitr::include_graphics("figurer/options_1.PNG")
 ```
-and if you'd like the same results as I have obtained, you can fix the random seed
+
+XXXX FIGURE XXXX
+
+
+
+## 2. Console
+Switch to the console (bottom left) by clicking down there or with Ctrl+2.
+
+In the console, you can write commands that are executed when you press Return.
+
+
+### Exercise 2.1 
+
+Try entering the following commands in the console: `2+2`, `sqrt(121)` and `round(0.6)`.
+
+### Exercise 2.2
+
+If we are not sure what the `round` function does, we can find a help file by typing `?round` or `help(round)`. Use this help to round 3.141593 to three decimal places
+
+`r hide("Solution")`
+
+We look at the documentation for the `round` function. The **Description** section describes the function - in this case it is common documentation for the functions `ceiling`, `floor`, `trunc`, `round` and `signif`.
+
+Under **Usage** we see what a call to the functions looks like, and under **Arguments** we get a more detailed description of the arguments to the function.
+
+Note that `round` takes two arguments: `x` and `digits`. The argument `digits` has the default value zero, with which you can get away with not specifying it and just write `round(3.141593)` if you are satisfied with rounding to an integer. If you specify `digits', you can determine the number of digits to be rounded to:
+
+
 ```{r}
-set.seed(123)
+round( 3.141593, digits = 3)
 ```
 
----
+Further down in the documentation we find **Details** (note for example that 0.5 is rounded down to 0, while 1.5 is rounded up to 2), and further down **Examples** that might be worth looking at a few times.
+`r unhide()`
 
-#### Exercise 1
+### Exercise 2.3 
+
+Try typing `5 - ` in the console followed by Return. What is happening and how to fix it?
+
+`r hide("Svar")`
+If you type an incomplete command and press Return, R displays a + prompt, which means that R is waiting for you to type the rest of the command. You can either complete the command or press Esc to start over.
+`r unhide()`
 
 
-Use a pipe to do the following:
+## 3. Editoren
+Editoren er øverst til venstre i Rstudio (hvis du ikke ændrede det, da vi var inde under Global Options). Man kan klikke sig derhen eller bruge Ctrl+1. 
 
-- draw 1000 values from a normal distribution with `mean = 5` and `sd = 1` - $N(5, 1)$, 
-- create a matrix where the first 500 values are the first column and the second 500 values are the second column 
-- make a scatterplot of these two columns
+### Exercise 3.1 
+Du kan finde det kode, du allerede har kørt, i History-fanebladet øverst til højre i Rstudio. Marker det kode, du vil gemme, og klik "To source" for at sende det over i editoren. 
 
+Tegnet `#` betyder, at resten af linjen bliver ignoreret, når du kører koden. Det gør `#` nyttig til at tilføje kommentaterer til din kode. Kommenter din kode, så du kan huske, hvad den går ud på, og gem koden til de første øvelser. Hvis du ikke har gjort det allerede, så lav en mappe til kursets øvelser et passende sted. Gem kodefilen der. 
 
+### Exercise 3.2 
+Kode sendes fra editoren til konsollen ved at placere cursoren i det relevante stykke kode (eller markere et stykke kode) og trykke Ctrl+Enter. 
+
+**Stil cursoren et sted i editoren og tryk Ctrl+Enter. Hvor er cursoren nu, og hvad sker der i konsollen? Hvad sker der, hvis du trykker på det lille "Run"-ikon øverst i editoren?**
+
+`r hide("Svar")`
+Kode evalueres statement for statement i konsollen, og cursoren hopper videre til næste statement, når du har sendt ét statement til konsollen. På den måde kan du køre hele din kodefil igennem ét Ctrl+R efter et andet (stort set som F3 i SAS)
+
+Hvis du markerer kode, kører Run-knappen det markerede, eller kører den hele kodefilen. Bemærk, at kørslen ikke stopper ved en fejl. 
+`r unhide()`
+
+## 4. Objekter og assignment
+Data (såsom en tekststreng, eller resultatet af en udregning, eller befolkningen pr. 1.1 2016, eller et plot) kan assignes til et objekt, så det er tilgængeligt indtil du lukker din R-session. Du laver et objekt ved at give det et navn (såsom "a" eller "MyObject") og fortælle, hvad der skal ligge i det. 
+
+```{r}
+# Assignment sker med pil:
+MyObject <- log10(30)
+```
+
+Bemærk, at din Environment-fane øverst til højre nu viser, at du har et objekt, der hedder `MyObject`. 
+
+### Exercise 4.1
+Når du herefter sender en kommando, der refererer til MyObject, erstatter R objektnavnet med data i objektet. Prøv med disse kommandoer: 
+
+```{r, eval=FALSE}
+MyObject
+MyObject+2
+```
+
+Hvad giver kommandoen `Myobject-1`? Hvorfor? 
 `r hide("Hint")`
-The function `rnorm` generates random normal distributed numbers. Try `help(rnorm)`.
+Hvad er forskellen på `MyObject` og `Myobject`?
 `r unhide()`
-
 `r hide("Solution")`
-```{r}
-
-rnorm(1000, 5) %>%
-  matrix(ncol = 2) %>%
-  plot()
-
+```{r, error=TRUE}
+MyObject-1
 ```
-`r unhide()` 
----
 
-<!-- 2. **Use a pipe to assign values `1:5` to object `x` and verify that the object exists.** -->
+R er **case sensistive**, så `MyObject` og `Myobject` er forskellige objekter, og `MoObject` er ikke assignet noget. 
+`r unhide()`
 
-<!-- Normally, when we use the following code to assign values to an object, we can directly run -->
-<!-- ```{r, eval=FALSE} -->
-<!-- x <- 1:5 -->
-<!-- ``` -->
+<!-- ### Exercise 4.2 -->
+<!-- **Når nu vi er blevet enige om, at man ikke får noget ud af at referere til objekter, der ikke er assignet, hvad skal vi så tænke om outputtet af kommandoen `pi`?** -->
 
-<!-- However, when we would like to do this in a pipe, we run into a problem.  -->
-<!-- ```{r, error=TRUE} -->
-<!-- "x" %>% assign(1:5) -->
-<!-- x -->
-<!-- ``` -->
+<!-- `r hide("Hint")` -->
+<!-- Brug help-funktionen.  -->
+<!-- `r unhide()` -->
 
-<!-- The pipe creates a separate, temporary environment where all things `%>%` take place (environments were discussed in Lecture C). This environment is different from the Global Environment and disappears once the pipe is finished. In other words, we assign `1:5` to object `x`, but once we are done assigning, object `x` is deleted.  -->
+<!-- `r hide("Svar")` -->
+<!-- Kommandoen `?pi` sender os til dokumentationen af konstanter inkluderet i base R. Vi kan se, at der er et antal indbyggede konstanter, som ikke er synlige i environment-tabben, men er tilgængelige for beregninger -->
 
-<!-- Function `assign()` is part of a class of functions that uses the current environment (the one that it is called from) to do its business. For such functions, we need to be explicit about the environment we would like the funtion to use: -->
+<!-- **Lidt mere dybdegående**: Når en pakke bliver loaded, er dens indhold tilgængeligt, men ikke synligt i Environment-tabben (eller for funktionen `ls()`). Konstanten `pi` ligger i pakken `base`, som altid er loaded pr. default. For at få noget at tygge på, så se her: -->
+
 <!-- ```{r} -->
-<!-- env <- environment() -->
-<!-- "x" %>% assign(1:5, envir = env) -->
-<!-- x -->
-<!-- ``` -->
-<!-- Now we have explicitly instructed function `assign()` to use the Global Environment: -->
-<!-- ```{r} -->
-<!-- environment() -->
-<!-- ``` -->
+<!-- pi -->
+<!-- # Vi sætter pi til fire. Hvorfor ikke? -->
+<!-- pi <- 4 -->
+<!-- pi -->
 
-<!-- We could also create a new environment to assign values to objects -->
-<!-- ```{r} -->
-<!-- assign.env <- new.env()  -->
-<!-- "x" %>% assign(letters[1:5], envir = assign.env) -->
-<!-- ``` -->
-<!-- But then we need to call `x` from `assign.env` -->
-<!-- ```{r} -->
-<!-- assign.env$x -->
-<!-- ``` -->
-<!-- because otherwise we would still get `x` from `R_GlobalEnv` -->
-<!-- ```{r} -->
-<!-- x -->
+<!-- # Men vi kan stadig tilgå den gamle værdi fra base-pakken -->
+<!-- base::pi -->
 <!-- ``` -->
 
-<!-- --- -->
-
-#### Exercise 2
-
-Use a pipe to calculate the correlation matrix on the `anscombe` data set.
-
-`r hide ("Hint")`
-What is the input for the function `cor`? Is it vectors, a matrix or a dataframe?
-`r unhide()`
-
-`r hide("Solution")`
-```{r}
-anscombe %>%
-  cor()
-```
-`r unhide()`
+<!-- `r unhide()` -->
 
 
----
 
-#### Exercise 3
-
-Now use a pipe to calculate the correlation for the pair (`x4`, `y4`) on the `anscombe` data set.
-
-`r hide ("Hint")`
-What is the input for the function `cor`? Is it vectors, a matrix or a dataframe?
-`r unhide()`
-
-`r hide("Solution")`
-
-Using the standard `%>%` pipe:
-
-```{r}
-anscombe %>%
-  subset(select = c(x4, y4)) %>%
-  cor()
-```
-`r unhide()`
-
-`r hide("Alternative solution")`
-
-Alternatively, we can use the `%$%` pipe from package `magrittr` to make this process much more efficient.
-
-```{r}
-anscombe %$%
-  cor(x4, y4)
-```
-`r unhide()`
-
----
-
-#### Exercise 4 
-
-Use a pipe to calculate the correlation between `hgt` and `wgt` in the `boys` data set from package `mice`.
-
-`r hide ("Hint")`
-How does `cor` handle missing numbers? Find a solution in the help documentation for `cor`. 
-`r unhide()`
-
-
-`r hide("Solution")`
-Because `boys` has missings values for almost all variables, we must first select `wgt` and `hgt` and then omit the rows that have missing values, before we can calculate the correlation. Using the standard `%>%` pipe, this would look like:
-
-```{r}
-boys %>%
-  subset(select = c("wgt", "hgt")) %>%
-  cor(use = "pairwise.complete.obs")
-```
-which is equivalent to 
-```{r}
-boys %>%
-  subset(select = c("wgt", "hgt")) %>%
-  na.omit() %>%
-  cor()
-```
-`r unhide()`
-
-`r hide("Alternative solution")`
-Alternatively, we can use the `%$%` pipe:
-```{r}
-boys %$% 
-  cor(hgt, wgt, use = "pairwise.complete.obs")
-```
-The `%$%` pipe *unfolds* the listed dimensions of the `boys` dataset, such that we can refer to them directly. 
-`r unhide()`
----
-
-#### Exercise 5
-
-In the `boys` data set, `hgt` is recorded in centimeters. Use a pipe to transform `hgt` in the `boys` dataset to height in meters and verify the transformation.
-
-`r hide("Solution")`
-
-Using the standard `%>%` and the `%$%` pipes:
-```{r}
-boys %>%
-  transform(hgt = hgt / 100) %$%
-  mean(hgt, na.rm = TRUE)
-```
-`r unhide()`
-
-
-`r hide("Alternative solution")`
-Instead of the base function `transform` it is possible to apply the dplyr function `mutate`. And instead of the `$` pipe it is possible to use `pull` and the `%>%` pipe:
-
-```{r}
-boys %>%
-  mutate(hgt = hgt / 100) %>% 
-  pull(hgt) %>%
-  mean(na.rm = TRUE)
-```
-`r unhide()`
-
----
-
-
-#### Exercise 6
-
-Use a pipe to plot the pair (`hgt`, `wgt`) two times: once for `hgt` in meters and once for `hgt` in centimeters. Make the points in the 'centimeter' plot `red` and in the 'meter' plot `blue`. 
-
-`r hide("Solution")` 
-This is best done with the `%T>%` pipe:
-```{r}
-boys %>%
-  subset(select = c(hgt, wgt)) %T>%
-  plot(col = "red", main = "Height in centimeters") %>%
-  transform(hgt = hgt / 100) %>%
-  plot(col = "blue", main = "Height in meters")
-```
-The `%T>%` pipe is very useful, because it creates a literal `T` junction in the pipe. It is perhaps most informative to graphically represent the above pipe as follows:
-```{r eval=FALSE}
-boys %>%
-  subset(select = c(hgt, wgt)) %T>%
-  plot(col = "red", main = "Height in centimeters") %>%
-  transform(hgt = hgt / 100) %>%
-  plot(col = "blue", main = "Height in meters")
-```
-![](flow_t_pipe.png)
-
-We can see that there is indeed a literal T-junction. Naturally, we can expand this process with more `%T>%` pipes. However, once a pipe gets too long or too complicated, it is perhaps more useful to cut the piped problem into smaller, manageble pieces. 
-`r unhide()`
-
----
-
-End of Practical
- 
----
-
-#### Useful References
-
-- [`magrittr`](https://magrittr.tidyverse.org)
-- [`R` for Data Science](http://r4ds.had.co.nz) - [Chapter 18 on pipes](http://r4ds.had.co.nz/pipes.html)
