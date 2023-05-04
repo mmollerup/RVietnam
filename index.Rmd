@@ -135,9 +135,7 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
 
 - Part A: Introduction
     - [Lecture A](Contents/Part_A/Lecture_A.html){target="_blank"}
-    - [Practical A](Contents/Part_A/Practical_A_walkthrough.html){target="_blank"}
-    - [`notebook.R`](Contents/Part_A/notebook.R){target="_blank"}
-    - [`markdown.Rmd`](Contents/Part_A/markdown.Rmd){target="_blank"}
+    - [Practical A](Contents/Part_A/Practical_A_webex.html){target="_blank"}
 - Part B: How is `R` organized?
     - [Lecture B](Contents/Part_B/Lecture_B.html){target="_blank"}
     - [Practical B](Contents/Part_B/Practical_B.html){target="_blank"}
