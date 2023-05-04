@@ -1,5 +1,5 @@
 ---
-title: "Practical C - exercises"
+title: "Practical C - Exercises"
 author: "Statistical Programming with R"
 date: ""
 output: webexercises::webexercises_default
