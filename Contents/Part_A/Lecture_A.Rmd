@@ -20,8 +20,8 @@ output:
 
 | Day         | Hours       | Topic                               |
 |:------------|:------------|:------------------------------------|
-| *Monday*    | 09.00-11.30 | Installation of R and RStudio       |
-|             | 13.30-16.30 | Introduction to R and Rstudio (A+B) |
+| *Monday*    | 09.00-11.30 | Introduction to R and Rstudio (A)   |
+|             | 13.30-16.30 | How is R organized? (B)             |
 | *Tuesday*   | 08.30-11.30 | Data manipulation (C)               |
 |             | 13.30-16.30 | Analyzing data (D)                  |
 | *Wednesday* | 08.30-11.30 | Data visualization  (E)             |
@@ -41,16 +41,36 @@ output:
 <img src="figuresLecture/fig1.png" alt="HTML5 Icon" width = 90%>
 </center>
 
-## The origin of R
-- R is a language and environment for statistical computing and for graphics
+<!-- ## The origin of R -->
+<!-- - R is a language and environment for statistical computing and for graphics -->
+<!-- - GNU project (100% free software) -->
+<!-- - Managed by the R Foundation for Statistical Computing, Vienna, Austria. -->
+<!-- - Community-driven -->
+<!-- - Based on the object-oriented language S (1975) -->
 
-- GNU project (100% free software)
 
-- Managed by the R Foundation for Statistical Computing, Vienna, Austria.
+## What is R?
 
-- Community-driven
+- R is a programming language for statistical programming and graphics
+- Opensource, powered by *the R Foundation for Statistical Computing*
+- Driven by a volunteer community that develops packages for every imaginable purpose
 
-- Based on the object-oriented language S (1975)
+
+## What is Tidyverse? 
+
+- A collection of data management, modeling, and visualization packages that "share underlying design philosophy, grammar, and data structures"
+- Characterized by the use of so-called "pipes", where the output of each line's code is passed on to the next link in the pipe. This generally makes for more readable code.
+```{r echo=F, out.width='50%', out.extra='style="float:right; padding:10px"'}
+knitr::include_graphics("figuresLecture/tidyverse.png")
+```
+- Load with `library(tidyverse)`
+
+<!-- - Karakteriseret ved brug af såkaldte "pipes", hvor output af hver linjes kode sendes videre til næste led i pipen. Dette giver generelt lettere læselig kode. -->
+<!-- ```{r echo=F, out.width='50%', out.extra='style="float:right; padding:10px"'} -->
+<!-- knitr::include_graphics("figurer/tidyverse.png") -->
+<!-- ``` -->
+<!-- - Indlæs med `library(tidyverse)` -->
+
 
 # What is RStudio?
 
