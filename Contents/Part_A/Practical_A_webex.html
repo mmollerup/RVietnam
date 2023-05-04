@@ -510,7 +510,7 @@ looking at a few times.</p>
 is happening and how to fix it?</p>
 <div class="webex-solution">
 <button>
-Svar
+Solution
 </button>
 <p>If you type an incomplete command and press Return, R displays a +
 prompt, which means that R is waiting for you to type the rest of the
@@ -519,68 +519,67 @@ over.</p>
 </div>
 </div>
 </div>
-<div id="editoren" class="section level2">
-<h2>3. Editoren</h2>
-<p>Editoren er øverst til venstre i Rstudio (hvis du ikke ændrede det,
-da vi var inde under Global Options). Man kan klikke sig derhen eller
-bruge Ctrl+1.</p>
+<div id="the-editor" class="section level2">
+<h2>3. The editor</h2>
+<p>The editor is at the top left of Rstudio (if you didn&#39;t change it
+when we were inside Global Options). You can click there or use
+Ctrl+1.</p>
 <div id="exercise-3.1" class="section level3">
 <h3>Exercise 3.1</h3>
-<p>Du kan finde det kode, du allerede har kørt, i History-fanebladet
-øverst til højre i Rstudio. Marker det kode, du vil gemme, og klik &quot;To
-source&quot; for at sende det over i editoren.</p>
-<p>Tegnet <code>#</code> betyder, at resten af linjen bliver ignoreret,
-når du kører koden. Det gør <code>#</code> nyttig til at tilføje
-kommentaterer til din kode. Kommenter din kode, så du kan huske, hvad
-den går ud på, og gem koden til de første øvelser. Hvis du ikke har
-gjort det allerede, så lav en mappe til kursets øvelser et passende
-sted. Gem kodefilen der.</p>
+<p>You can find the code you&#39;ve already run in the History tab at the
+top right of Rstudio. Select the code you want to save and click &quot;To
+source&quot; to send it over to the editor.</p>
+<p>The <code>#</code> character means that the rest of the line will be
+ignored when you run the code. That makes <code>#</code> useful for
+adding comments to your code. Comment your code so you can remember what
+it&#39;s about and save the code for the first exercises. If you haven&#39;t
+done so already, create a folder for the course exercises in a suitable
+place. Save the code file there.</p>
 </div>
 <div id="exercise-3.2" class="section level3">
 <h3>Exercise 3.2</h3>
-<p>Kode sendes fra editoren til konsollen ved at placere cursoren i det
-relevante stykke kode (eller markere et stykke kode) og trykke
+<p>Code is sent from the editor to the console by placing the cursor in
+the relevant piece of code (or selecting a piece of code) and pressing
 Ctrl+Enter.</p>
-<p><strong>Stil cursoren et sted i editoren og tryk Ctrl+Enter. Hvor er
-cursoren nu, og hvad sker der i konsollen? Hvad sker der, hvis du
-trykker på det lille &quot;Run&quot;-ikon øverst i editoren?</strong></p>
+<p>Place the cursor somewhere in the editor and press Ctrl+Enter. Where
+is the cursor now and what is happening in the console? What happens if
+you press the little &quot;Run&quot; icon at the top of the editor?</p>
 <div class="webex-solution">
 <button>
-Svar
+Solution
 </button>
-<p>Kode evalueres statement for statement i konsollen, og cursoren
-hopper videre til næste statement, når du har sendt ét statement til
-konsollen. På den måde kan du køre hele din kodefil igennem ét Ctrl+R
-efter et andet (stort set som F3 i SAS)</p>
-<p>Hvis du markerer kode, kører Run-knappen det markerede, eller kører
-den hele kodefilen. Bemærk, at kørslen ikke stopper ved en fejl.</p>
+<p>Code is evaluated statement by statement in the console, and the
+cursor jumps to the next statement when you have sent one statement to
+the console. That way you can run your entire code file through one
+Ctrl+R after another (much like F3 in SAS)</p>
+<p>If you select code, the Run button will run the selected code or run
+the entire code file. Note that the run does not stop on an error.</p>
 </div>
 </div>
 </div>
-<div id="objekter-og-assignment" class="section level2">
-<h2>4. Objekter og assignment</h2>
-<p>Data (såsom en tekststreng, eller resultatet af en udregning, eller
-befolkningen pr. 1.1 2016, eller et plot) kan assignes til et objekt, så
-det er tilgængeligt indtil du lukker din R-session. Du laver et objekt
-ved at give det et navn (såsom &quot;a&quot; eller &quot;MyObject&quot;) og fortælle, hvad
-der skal ligge i det.</p>
-<pre class="r"><code># Assignment sker med pil:
+<div id="objects-and-assignment" class="section level2">
+<h2>4. Objects and assignment</h2>
+<p>Data (such as a text string, or the result of a calculation, or the
+population as of 1.1 2016, or a plot) can be assigned to an object so
+that it is available until you close your R session. You create an
+object by giving it a name (such as &quot;a&quot; or &quot;MyObject&quot;) and telling it
+what to put inside it.</p>
+<pre class="r"><code># Assignment is done with arrow:
 MyObject &lt;- log10(30)</code></pre>
-<p>Bemærk, at din Environment-fane øverst til højre nu viser, at du har
-et objekt, der hedder <code>MyObject</code>.</p>
+<p>Notice that your Environment tab in the top right now shows that you
+have an object called <code>MyObject</code>.</p>
 <div id="exercise-4.1" class="section level3">
 <h3>Exercise 4.1</h3>
-<p>Når du herefter sender en kommando, der refererer til MyObject,
-erstatter R objektnavnet med data i objektet. Prøv med disse
-kommandoer:</p>
+<p>When you then type a command that references MyObject, R replaces the
+object name with the data in the object. Try these commands:</p>
 <pre class="r"><code>MyObject
 MyObject+2</code></pre>
-<p>Hvad giver kommandoen <code>Myobject-1</code>? Hvorfor?</p>
+<p>What does the <code>Myobject-1</code> command do? Why?</p>
 <div class="webex-solution">
 <button>
 Hint
 </button>
-<p>Hvad er forskellen på <code>MyObject</code> og
+<p>What is the difference between <code>MyObject</code> and
 <code>Myobject</code>?</p>
 </div>
 <div class="webex-solution">
@@ -589,9 +588,9 @@ Solution
 </button>
 <pre class="r"><code>MyObject-1</code></pre>
 <pre><code>## [1] 0.4771213</code></pre>
-<p>R er <strong>case sensistive</strong>, så <code>MyObject</code> og
-<code>Myobject</code> er forskellige objekter, og <code>MoObject</code>
-er ikke assignet noget.</p>
+<p>R is <strong>case sensitive</strong>, so <code>MyObject</code> and
+<code>Myobject</code> are different objects, and <code>MoObject</code>
+is not assigned anything.</p>
 </div>
 <!-- ### Exercise 4.2 -->
 <!-- **Når nu vi er blevet enige om, at man ikke får noget ud af at referere til objekter, der ikke er assignet, hvad skal vi så tænke om outputtet af kommandoen `pi`?** -->

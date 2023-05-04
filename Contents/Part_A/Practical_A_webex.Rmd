@@ -79,7 +79,6 @@ Under **Usage** we see what a call to the functions looks like, and under **Argu
 
 Note that `round` takes two arguments: `x` and `digits`. The argument `digits` has the default value zero, with which you can get away with not specifying it and just write `round(3.141593)` if you are satisfied with rounding to an integer. If you specify `digits', you can determine the number of digits to be rounded to:
 
-
 ```{r}
 round( 3.141593, digits = 3)
 ```
@@ -91,58 +90,63 @@ Further down in the documentation we find **Details** (note for example that 0.5
 
 Try typing `5 - ` in the console followed by Return. What is happening and how to fix it?
 
-`r hide("Svar")`
+`r hide("Solution")`
 If you type an incomplete command and press Return, R displays a + prompt, which means that R is waiting for you to type the rest of the command. You can either complete the command or press Esc to start over.
 `r unhide()`
 
 
-## 3. Editoren
-Editoren er øverst til venstre i Rstudio (hvis du ikke ændrede det, da vi var inde under Global Options). Man kan klikke sig derhen eller bruge Ctrl+1. 
+## 3. The editor 
+
+The editor is at the top left of Rstudio (if you didn't change it when we were inside Global Options). You can click there or use Ctrl+1.
 
 ### Exercise 3.1 
-Du kan finde det kode, du allerede har kørt, i History-fanebladet øverst til højre i Rstudio. Marker det kode, du vil gemme, og klik "To source" for at sende det over i editoren. 
 
-Tegnet `#` betyder, at resten af linjen bliver ignoreret, når du kører koden. Det gør `#` nyttig til at tilføje kommentaterer til din kode. Kommenter din kode, så du kan huske, hvad den går ud på, og gem koden til de første øvelser. Hvis du ikke har gjort det allerede, så lav en mappe til kursets øvelser et passende sted. Gem kodefilen der. 
+You can find the code you've already run in the History tab at the top right of Rstudio. Select the code you want to save and click "To source" to send it over to the editor.
+
+The `#` character means that the rest of the line will be ignored when you run the code. That makes `#` useful for adding comments to your code. Comment your code so you can remember what it's about and save the code for the first exercises. If you haven't done so already, create a folder for the course exercises in a suitable place. Save the code file there.
+
 
 ### Exercise 3.2 
-Kode sendes fra editoren til konsollen ved at placere cursoren i det relevante stykke kode (eller markere et stykke kode) og trykke Ctrl+Enter. 
+Code is sent from the editor to the console by placing the cursor in the relevant piece of code (or selecting a piece of code) and pressing Ctrl+Enter.
 
-**Stil cursoren et sted i editoren og tryk Ctrl+Enter. Hvor er cursoren nu, og hvad sker der i konsollen? Hvad sker der, hvis du trykker på det lille "Run"-ikon øverst i editoren?**
+Place the cursor somewhere in the editor and press Ctrl+Enter. Where is the cursor now and what is happening in the console? What happens if you press the little "Run" icon at the top of the editor?
 
-`r hide("Svar")`
-Kode evalueres statement for statement i konsollen, og cursoren hopper videre til næste statement, når du har sendt ét statement til konsollen. På den måde kan du køre hele din kodefil igennem ét Ctrl+R efter et andet (stort set som F3 i SAS)
+`r hide("Solution")`
+Code is evaluated statement by statement in the console, and the cursor jumps to the next statement when you have sent one statement to the console. That way you can run your entire code file through one Ctrl+R after another (much like F3 in SAS)
 
-Hvis du markerer kode, kører Run-knappen det markerede, eller kører den hele kodefilen. Bemærk, at kørslen ikke stopper ved en fejl. 
+If you select code, the Run button will run the selected code or run the entire code file. Note that the run does not stop on an error.
 `r unhide()`
 
-## 4. Objekter og assignment
-Data (såsom en tekststreng, eller resultatet af en udregning, eller befolkningen pr. 1.1 2016, eller et plot) kan assignes til et objekt, så det er tilgængeligt indtil du lukker din R-session. Du laver et objekt ved at give det et navn (såsom "a" eller "MyObject") og fortælle, hvad der skal ligge i det. 
+## 4. Objects and assignment
+Data (such as a text string, or the result of a calculation, or the population as of 1.1 2016, or a plot) can be assigned to an object so that it is available until you close your R session. You create an object by giving it a name (such as "a" or "MyObject") and telling it what to put inside it.
+
 
 ```{r}
-# Assignment sker med pil:
+# Assignment is done with arrow:
 MyObject <- log10(30)
 ```
 
-Bemærk, at din Environment-fane øverst til højre nu viser, at du har et objekt, der hedder `MyObject`. 
+Notice that your Environment tab in the top right now shows that you have an object called `MyObject`.
+
 
 ### Exercise 4.1
-Når du herefter sender en kommando, der refererer til MyObject, erstatter R objektnavnet med data i objektet. Prøv med disse kommandoer: 
+When you then type a command that references MyObject, R replaces the object name with the data in the object. Try these commands:
 
 ```{r, eval=FALSE}
 MyObject
 MyObject+2
 ```
 
-Hvad giver kommandoen `Myobject-1`? Hvorfor? 
+What does the `Myobject-1` command do? Why?
+
 `r hide("Hint")`
-Hvad er forskellen på `MyObject` og `Myobject`?
+What is the difference between `MyObject` and `Myobject`?
 `r unhide()`
 `r hide("Solution")`
 ```{r, error=TRUE}
 MyObject-1
 ```
-
-R er **case sensistive**, så `MyObject` og `Myobject` er forskellige objekter, og `MoObject` er ikke assignet noget. 
+R is **case sensitive**, so `MyObject` and `Myobject` are different objects, and `MoObject` is not assigned anything.
 `r unhide()`
 
 <!-- ### Exercise 4.2 -->
