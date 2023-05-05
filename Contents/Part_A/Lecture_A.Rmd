@@ -20,7 +20,7 @@ output:
 
 | Day         | Hours       | Topic                               |
 |:------------|:------------|:------------------------------------|
-| *Monday*    | 09.00-11.30 | Introduction to R and Rstudio (A)   |
+| *Monday*    | 09.00-11.30 | Introduction to R and RStudio (A)   |
 |             | 13.30-16.30 | How is R organized? (B)             |
 | *Tuesday*   | 08.30-11.30 | Data manipulation (C)               |
 |             | 13.30-16.30 | Analyzing data (D)                  |
@@ -33,6 +33,13 @@ output:
 <!-- <img src="figures/schedule.png" alt="HTML5 Icon" width = 90%> -->
 <!-- </center> -->
 
+## Format
+
+- A mixture of presentations and exercises
+- Program and course materials are located at `https://mmollerup.github.io/RVietnam/`
+- Exercises with hints and solutions
+   - Use hints 
+- Ask
 
 # What is R?
 
@@ -65,12 +72,6 @@ knitr::include_graphics("figuresLecture/tidyverse.png")
 ```
 - Load with `library(tidyverse)`
 
-<!-- - Karakteriseret ved brug af såkaldte "pipes", hvor output af hver linjes kode sendes videre til næste led i pipen. Dette giver generelt lettere læselig kode. -->
-<!-- ```{r echo=F, out.width='50%', out.extra='style="float:right; padding:10px"'} -->
-<!-- knitr::include_graphics("figurer/tidyverse.png") -->
-<!-- ``` -->
-<!-- - Indlæs med `library(tidyverse)` -->
-
 
 # What is RStudio?
 
@@ -80,58 +81,15 @@ knitr::include_graphics("figuresLecture/tidyverse.png")
 </center>
 
 ## RStudio
+- Integrated Development Environment (IDE)
 - Aggregates all convenient information and procedures into one single place
 - Allows you to work in projects
 - Manages your code with highlighting
-- Gives extra functionality ((reports in html, doc, pfd, webpages...))
+- Gives extra functionality (reports in html, doc, pfd, webpages...)
 - Allows for integration with version control routines, such as Git.
 
 
-
-# How does R work
-
-## Objects and elements
-- R works with objects that consist of elements. The smallest elements are numbers and characters.
-
-    - These elements are assigned to objects. 
-    - A set of objects can be used to perform calculations
-    - Calculations can be presented as functions
-    - Functions are used to perform calculations and return new objects, containing calculated (or estimated) elements. 
-
-## The help
-- Everything that is published on the Comprehensive `R` Archive Network (CRAN) and is aimed at `R` users, must be accompanied by a help file. 
-- If you know the name of the function that performs an operation, e.g. `anova()`, then you just type `?anova` or `help(anova)` in the console. 
-- If you do not know the name of the function: type `??` followed by your search criterion. For example `??anova` returns a list of all help pages that contain the word 'anova'
-
-- Alternatively, the internet will tell you almost everything you'd like to know (and then some)
-
-- Sites such as http://www.stackoverflow.com and http://www.stackexchange.com, as well as `Google` can be of tremendous help. 
-    - If you google `R` related issues; use 'R:' as a prefix in your search term
-    
-## Assigning elements to objects
-- Assigning things in R is very straightforward: 
-
-    - you just use `<-`
-
-- For example, if you assign the value `100` (an element) to object `a`, you would type
-
-```{r}
-a <- 100
-```
-
-- Life hack: In RStudio learn to use the shortcut "alt + -" (hyphen) to produce the left arrow `<-` in an R file
-
-
-## Calling objects
-- Calling things in R is also very straightforward: 
-
-    - you just use type the name you have given to the object
-
-- For example, we assigned the value `100` to object `a`. To call object `a`, we would type
-
-```{r}
-a
-```
+# Workflow 
 
 ## Writing code
 <center>
@@ -143,7 +101,7 @@ This is why we use R-Studio.
 
 ## Projects
 
-- A feature of Rstudio.
+- A feature of RStudio.
 - Basically: A project is a folder that contains a `.Rproj` file. When you open the project file, you start a new session, with your *working directory* in the project folder
    - *working directory*: Where `R` looks for files you want to load and puts files you want to save.
       - You can see your *working directory* with `getwd()`, and you can set it with `setwd()` - **but you should not do it**, because it results in more fragile code.
@@ -158,7 +116,6 @@ This is why we use R-Studio.
 - Save output *with code* not as point-and-click.
 - When you code paths to files, do so *relative to your project folder*.
 
-
 ```{r, eval=FALSE}
 ## Good!:
 saveRDS( MyObject, "/Output/MyObject.RDS")
@@ -169,6 +126,50 @@ saveRDS( MitObject, "C:/Documents/This Project/Output/MyObject.RDS")
 
 *(Also note: R uses `/` and not `\` in paths to files)*
 
+
+# Working in R
+
+## The help
+- Everything that is published on the Comprehensive `R` Archive Network (CRAN) and is aimed at `R` users, must be accompanied by a help file. 
+- If you know the name of the function that performs an operation, e.g. `anova()`, then you just type `?anova` or `help(anova)` in the console. 
+- If you do not know the name of the function: type `??` followed by your search criterion. For example `??anova` returns a list of all help pages that contain the word 'anova'
+
+- Alternatively, the internet will tell you almost everything you'd like to know (and then some)
+
+- Sites such as http://www.stackoverflow.com and http://www.stackexchange.com, as well as `Google` can be of tremendous help. 
+    - If you google `R` related issues; use 'R:' as a prefix in your search term
+
+## Objects and elements
+- R works with objects that consist of elements. The smallest elements are numbers and characters.
+
+    - These elements are assigned to objects. 
+    - A set of objects can be used to perform calculations
+    - Calculations can be presented as functions
+    - Functions are used to perform calculations and return new objects, containing calculated (or estimated) elements. 
+    - View the objects you have created in the Environment tab on the right of RStudio
+
+
+## Assigning elements to objects
+Assigning things in R is very straightforward: 
+
+ - you just use `<-`
+
+For example, if you assign the value `100` (an element) to object `a`, you would type
+
+```{r}
+a <- 100
+```
+
+
+Calling things in R is also very straightforward: 
+
+ - you just use type the name you have given to the object
+
+For example, we assigned the value `100` to object `a`. To call object `a`, we would type
+
+```{r}
+a
+```
 
 
 # Practical A

@@ -3232,7 +3232,7 @@ line-height: 1.9;
 <tr class="odd">
 <td align="left"><em>Monday</em></td>
 <td align="left">09.00-11.30</td>
-<td align="left">Introduction to R and Rstudio (A)</td>
+<td align="left">Introduction to R and RStudio (A)</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -3277,6 +3277,19 @@ line-height: 1.9;
 
 <!-- </center> -->
 
+</article></slide><slide class=""><hgroup><h2>Format</h2></hgroup><article  id="format" class="smaller ">
+
+<ul>
+<li>A mixture of presentations and exercises</li>
+<li>Program and course materials are located at <code>https://mmollerup.github.io/RVietnam/</code></li>
+<li>Exercises with hints and solutions
+
+<ul>
+<li>Use hints</li>
+</ul></li>
+<li>Ask</li>
+</ul>
+
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>What is R?</h2></hgroup><article  id="what-is-r" class="smaller ">
 
 </article></slide><slide class=""><hgroup><h2>Software</h2></hgroup><article  id="software" class="smaller ">
@@ -3315,16 +3328,6 @@ line-height: 1.9;
 <li>Load with <code>library(tidyverse)</code></li>
 </ul>
 
-<!-- - Karakteriseret ved brug af såkaldte "pipes", hvor output af hver linjes kode sendes videre til næste led i pipen. Dette giver generelt lettere læselig kode. -->
-
-<!-- ```{r echo=F, out.width='50%', out.extra='style="float:right; padding:10px"'} -->
-
-<!-- knitr::include_graphics("figurer/tidyverse.png") -->
-
-<!-- ``` -->
-
-<!-- - Indlæs med `library(tidyverse)` -->
-
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>What is RStudio?</h2></hgroup><article  id="what-is-rstudio" class="smaller ">
 
 </article></slide><slide class=""><hgroup><h2>Integrated Development Environment</h2></hgroup><article  id="integrated-development-environment" class="smaller ">
@@ -3338,73 +3341,15 @@ line-height: 1.9;
 </article></slide><slide class=""><hgroup><h2>RStudio</h2></hgroup><article  id="rstudio" class="smaller ">
 
 <ul>
+<li>Integrated Development Environment (IDE)</li>
 <li>Aggregates all convenient information and procedures into one single place</li>
 <li>Allows you to work in projects</li>
 <li>Manages your code with highlighting</li>
-<li>Gives extra functionality ((reports in html, doc, pfd, webpages…))</li>
+<li>Gives extra functionality (reports in html, doc, pfd, webpages…)</li>
 <li>Allows for integration with version control routines, such as Git.</li>
 </ul>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>How does R work</h2></hgroup><article  id="how-does-r-work" class="smaller ">
-
-</article></slide><slide class=""><hgroup><h2>Objects and elements</h2></hgroup><article  id="objects-and-elements" class="smaller ">
-
-<ul>
-<li><p>R works with objects that consist of elements. The smallest elements are numbers and characters.</p>
-
-<ul>
-<li>These elements are assigned to objects.</li>
-<li>A set of objects can be used to perform calculations</li>
-<li>Calculations can be presented as functions</li>
-<li>Functions are used to perform calculations and return new objects, containing calculated (or estimated) elements.</li>
-</ul></li>
-</ul>
-
-</article></slide><slide class=""><hgroup><h2>The help</h2></hgroup><article  id="the-help" class="smaller ">
-
-<ul>
-<li><p>Everything that is published on the Comprehensive <code>R</code> Archive Network (CRAN) and is aimed at <code>R</code> users, must be accompanied by a help file.</p></li>
-<li><p>If you know the name of the function that performs an operation, e.g. <code>anova()</code>, then you just type <code>?anova</code> or <code>help(anova)</code> in the console.</p></li>
-<li><p>If you do not know the name of the function: type <code>??</code> followed by your search criterion. For example <code>??anova</code> returns a list of all help pages that contain the word &lsquo;anova&rsquo;</p></li>
-<li><p>Alternatively, the internet will tell you almost everything you’d like to know (and then some)</p></li>
-<li><p>Sites such as <a href='http://www.stackoverflow.com' title=''>http://www.stackoverflow.com</a> and <a href='http://www.stackexchange.com' title=''>http://www.stackexchange.com</a>, as well as <code>Google</code> can be of tremendous help.</p>
-
-<ul>
-<li>If you google <code>R</code> related issues; use &lsquo;R:&rsquo; as a prefix in your search term</li>
-</ul></li>
-</ul>
-
-</article></slide><slide class=""><hgroup><h2>Assigning elements to objects</h2></hgroup><article  id="assigning-elements-to-objects" class="smaller ">
-
-<ul>
-<li><p>Assigning things in R is very straightforward:</p>
-
-<ul>
-<li>you just use <code>&lt;-</code></li>
-</ul></li>
-<li><p>For example, if you assign the value <code>100</code> (an element) to object <code>a</code>, you would type</p></li>
-</ul>
-
-<pre class = 'prettyprint lang-r'>a &lt;- 100</pre>
-
-<ul>
-<li>Life hack: In RStudio learn to use the shortcut &ldquo;alt + -&rdquo; (hyphen) to produce the left arrow <code>&lt;-</code> in an R file</li>
-</ul>
-
-</article></slide><slide class=""><hgroup><h2>Calling objects</h2></hgroup><article  id="calling-objects" class="smaller ">
-
-<ul>
-<li><p>Calling things in R is also very straightforward:</p>
-
-<ul>
-<li>you just use type the name you have given to the object</li>
-</ul></li>
-<li><p>For example, we assigned the value <code>100</code> to object <code>a</code>. To call object <code>a</code>, we would type</p></li>
-</ul>
-
-<pre class = 'prettyprint lang-r'>a</pre>
-
-<pre >## [1] 100</pre>
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Workflow</h2></hgroup><article  id="workflow" class="smaller ">
 
 </article></slide><slide class=""><hgroup><h2>Writing code</h2></hgroup><article  id="writing-code" class="smaller ">
 
@@ -3419,7 +3364,7 @@ line-height: 1.9;
 </article></slide><slide class=""><hgroup><h2>Projects</h2></hgroup><article  id="projects" class="smaller ">
 
 <ul>
-<li>A feature of Rstudio.</li>
+<li>A feature of RStudio.</li>
 <li>Basically: A project is a folder that contains a <code>.Rproj</code> file. When you open the project file, you start a new session, with your <em>working directory</em> in the project folder
 
 <ul>
@@ -3450,6 +3395,60 @@ saveRDS( MyObject, &quot;/Output/MyObject.RDS&quot;)
 saveRDS( MitObject, &quot;C:/Documents/This Project/Output/MyObject.RDS&quot;)</pre>
 
 <p><em>(Also note: R uses <code>/</code> and not <code>\</code> in paths to files)</em></p>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Working in R</h2></hgroup><article  id="working-in-r" class="smaller ">
+
+</article></slide><slide class=""><hgroup><h2>The help</h2></hgroup><article  id="the-help" class="smaller ">
+
+<ul>
+<li><p>Everything that is published on the Comprehensive <code>R</code> Archive Network (CRAN) and is aimed at <code>R</code> users, must be accompanied by a help file.</p></li>
+<li><p>If you know the name of the function that performs an operation, e.g. <code>anova()</code>, then you just type <code>?anova</code> or <code>help(anova)</code> in the console.</p></li>
+<li><p>If you do not know the name of the function: type <code>??</code> followed by your search criterion. For example <code>??anova</code> returns a list of all help pages that contain the word &lsquo;anova&rsquo;</p></li>
+<li><p>Alternatively, the internet will tell you almost everything you’d like to know (and then some)</p></li>
+<li><p>Sites such as <a href='http://www.stackoverflow.com' title=''>http://www.stackoverflow.com</a> and <a href='http://www.stackexchange.com' title=''>http://www.stackexchange.com</a>, as well as <code>Google</code> can be of tremendous help.</p>
+
+<ul>
+<li>If you google <code>R</code> related issues; use &lsquo;R:&rsquo; as a prefix in your search term</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Objects and elements</h2></hgroup><article  id="objects-and-elements" class="smaller ">
+
+<ul>
+<li><p>R works with objects that consist of elements. The smallest elements are numbers and characters.</p>
+
+<ul>
+<li>These elements are assigned to objects.</li>
+<li>A set of objects can be used to perform calculations</li>
+<li>Calculations can be presented as functions</li>
+<li>Functions are used to perform calculations and return new objects, containing calculated (or estimated) elements.</li>
+<li>View the objects you have created in the Environment tab on the right of RStudio</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Assigning elements to objects</h2></hgroup><article  id="assigning-elements-to-objects" class="smaller ">
+
+<p>Assigning things in R is very straightforward:</p>
+
+<ul>
+<li>you just use <code>&lt;-</code></li>
+</ul>
+
+<p>For example, if you assign the value <code>100</code> (an element) to object <code>a</code>, you would type</p>
+
+<pre class = 'prettyprint lang-r'>a &lt;- 100</pre>
+
+<p>Calling things in R is also very straightforward:</p>
+
+<ul>
+<li>you just use type the name you have given to the object</li>
+</ul>
+
+<p>For example, we assigned the value <code>100</code> to object <code>a</code>. To call object <code>a</code>, we would type</p>
+
+<pre class = 'prettyprint lang-r'>a</pre>
+
+<pre >## [1] 100</pre>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Practical A</h2></hgroup><article  id="practical-a" class="smaller "></article></slide>
 
