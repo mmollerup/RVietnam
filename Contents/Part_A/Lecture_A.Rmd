@@ -45,7 +45,8 @@ output:
 
 ## Software
 <center>
-<img src="figuresLecture/fig1.png" alt="HTML5 Icon" width = 90%>
+<!-- <img src="figuresLecture/fig1.png" alt="HTML5 Icon" width = 90%> -->
+<img src="figuresLecture/rgui.png" alt="HTML5 Icon" width = 90%>
 </center>
 
 <!-- ## The origin of R -->
@@ -77,7 +78,8 @@ knitr::include_graphics("figuresLecture/tidyverse.png")
 
 ## Integrated Development Environment
 <center>
-<img src="figuresLecture/fig2.png" alt="HTML5 Icon" width = 85%>
+<!-- <img src="figuresLecture/fig2.png" alt="HTML5 Icon" width = 85%> -->
+<img src="figuresLecture/rstudio_ide.png" alt="HTML5 Icon" width = 85%> 
 </center>
 
 ## RStudio
@@ -93,7 +95,8 @@ knitr::include_graphics("figuresLecture/tidyverse.png")
 
 ## Writing code
 <center>
-<img src="figuresLecture/codelight.png" alt="HTML5 Icon" width = 99%>
+<!-- <img src="figuresLecture/codelight.png" alt="HTML5 Icon" width = 99%> -->
+<img src="figuresLecture/rstudio_code.png" alt="HTML5 Icon" width = 99%>
 </center>
 
 This is why we use R-Studio.
