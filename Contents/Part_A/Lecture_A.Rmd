@@ -83,8 +83,10 @@ knitr::include_graphics("figuresLecture/tidyverse.png")
 - Aggregates all convenient information and procedures into one single place
 - Allows you to work in projects
 - Manages your code with highlighting
-- Gives extra functionality (Shiny, knitr, markdown, LaTeX)
+- Gives extra functionality ((reports in html, doc, pfd, webpages...))
 - Allows for integration with version control routines, such as Git.
+
+
 
 # How does R work
 
@@ -137,6 +139,37 @@ a
 </center>
 
 This is why we use R-Studio.
+
+
+## Projects
+
+- A feature of Rstudio.
+- Basically: A project is a folder that contains a `.Rproj` file. When you open the project file, you start a new session, with your *working directory* in the project folder
+   - *working directory*: Where `R` looks for files you want to load and puts files you want to save.
+      - You can see your *working directory* with `getwd()`, and you can set it with `setwd()` - **but you should not do it**, because it results in more fragile code.
+- It is good practice to keep all files belonging to a project in the same place.
+- Projects make it easier to separate separate analyses, and make code more portable and robust.
+
+## Projects in practice
+
+- Create a separate folder and an RStudio project file for each project.
+- Put your code files there.
+- Save output there.
+- Save output *with code* not as point-and-click.
+- When you code paths to files, do so *relative to your project folder*.
+
+
+```{r, eval=FALSE}
+## Good!:
+saveRDS( MyObject, "/Output/MyObject.RDS")
+
+## No!:
+saveRDS( MitObject, "C:/Documents/This Project/Output/MyObject.RDS")
+```
+
+*(Also note: R uses `/` and not `\` in paths to files)*
+
+
 
 # Practical A
 

@@ -3341,7 +3341,7 @@ line-height: 1.9;
 <li>Aggregates all convenient information and procedures into one single place</li>
 <li>Allows you to work in projects</li>
 <li>Manages your code with highlighting</li>
-<li>Gives extra functionality (Shiny, knitr, markdown, LaTeX)</li>
+<li>Gives extra functionality ((reports in html, doc, pfd, webpages…))</li>
 <li>Allows for integration with version control routines, such as Git.</li>
 </ul>
 
@@ -3415,6 +3415,41 @@ line-height: 1.9;
 </center>
 
 <p>This is why we use R-Studio.</p>
+
+</article></slide><slide class=""><hgroup><h2>Projects</h2></hgroup><article  id="projects" class="smaller ">
+
+<ul>
+<li>A feature of Rstudio.</li>
+<li>Basically: A project is a folder that contains a <code>.Rproj</code> file. When you open the project file, you start a new session, with your <em>working directory</em> in the project folder
+
+<ul>
+<li><em>working directory</em>: Where <code>R</code> looks for files you want to load and puts files you want to save.
+
+<ul>
+<li>You can see your <em>working directory</em> with <code>getwd()</code>, and you can set it with <code>setwd()</code> - <strong>but you should not do it</strong>, because it results in more fragile code.</li>
+</ul></li>
+</ul></li>
+<li>It is good practice to keep all files belonging to a project in the same place.</li>
+<li>Projects make it easier to separate separate analyses, and make code more portable and robust.</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Projects in practice</h2></hgroup><article  id="projects-in-practice" class="smaller ">
+
+<ul>
+<li>Create a separate folder and an RStudio project file for each project.</li>
+<li>Put your code files there.</li>
+<li>Save output there.</li>
+<li>Save output <em>with code</em> not as point-and-click.</li>
+<li>When you code paths to files, do so <em>relative to your project folder</em>.</li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>## Good!:
+saveRDS( MyObject, &quot;/Output/MyObject.RDS&quot;)
+
+## No!:
+saveRDS( MitObject, &quot;C:/Documents/This Project/Output/MyObject.RDS&quot;)</pre>
+
+<p><em>(Also note: R uses <code>/</code> and not <code>\</code> in paths to files)</em></p>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Practical A</h2></hgroup><article  id="practical-a" class="smaller "></article></slide>
 
