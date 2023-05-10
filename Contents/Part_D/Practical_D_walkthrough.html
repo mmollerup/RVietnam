@@ -3705,9 +3705,11 @@ fcases &lt;- whof %&gt;%
    select(country, year, cases) %&gt;%
    ungroup()
 
-fcase &lt;- merge(fcases, whof, by = c(&quot;year&quot;, &quot;country&quot;))  
+fcase &lt;- merge(fcases, whof, by = c(&quot;year&quot;, &quot;country&quot;))  </pre>
 
-newcs1 &lt;- merge(fcase, mcase, by = c(&quot;year&quot;, &quot;country&quot;) )</pre>
+</article></slide><slide class=""><hgroup><h2>Continued</h2></hgroup><article  id="continued" class="smaller ">
+
+<pre class = 'prettyprint lang-r'>newcs1 &lt;- merge(fcase, mcase, by = c(&quot;year&quot;, &quot;country&quot;) )</pre>
 
 </article></slide><slide class=""><hgroup><h2>Promblem 6, continued</h2></hgroup><article  id="promblem-6-continued" class="smaller ">
 
