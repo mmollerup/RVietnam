@@ -2,4 +2,4 @@
 
 Dashboard, slides and exercises for R course in Vietnam
 
-Test i mac
+Test i mac II
